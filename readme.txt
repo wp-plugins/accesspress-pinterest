@@ -12,6 +12,7 @@ Pin it button | Follow Pinterest button | Pin board widgets | Profile widget | L
 
 == Description ==
 <strong>AccessPress Pinterest</strong> is a feature rich<strong>FREE Pinterest plugin</strong>for WordPress. In just 1 minute setup you can use:
+
 * Pin it button on image.
 * Put follow Pinterest button on website.
 * Pin board widgets.
