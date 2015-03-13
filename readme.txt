@@ -1,6 +1,6 @@
 === AccessPress Pinterest ===
 Contributors: Access Keys
-Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social share pinterest, social share, social media, social network, follow, pinterest pin
+Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social share pinterest, social share, social media, social network, follow, pinterest pin, shortcode
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
@@ -11,7 +11,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Pin it button | Follow Pinterest button | Pin board widgets | Profile widget | Latest pins feed and more.
 
 == Description ==
-<strong>AccessPress Pinterest</strong> is a feature rich<strong>FREE Pinterest plugin</strong>for WordPress. In just 1 minute setup you can use:
+<strong>AccessPress Pinterest</strong> is a feature rich<strong> FREE Pinterest plugin</strong> for WordPress. 
+In just 1 minute setup you can use:
 
 * Pin it button on image.
 * Put follow Pinterest button on website.
@@ -29,11 +30,11 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 * Follow Pinterest button for website.
 * Pin board widgets.
 * Pinterest profile widget.
-* Latest pins feed
+* Latest pins feed(caption optional).
 * Lightweight - Installs in seconds.
 * User friendly - very easy to configure and setup. 
 * Shortcodes and widgets available. 
-* Super support - get support via email/support forum/online chat
+* Super support - get support via email/support forum/online chat.
 
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
@@ -44,7 +45,7 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 
 For a easy installation guide checkout the Installation tab above.
 
-For complete information and documentation regarding plugin,please visit below links.
+For complete information and documentation regarding plugin, please visit below links.
 
 [Plugin information](https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/)
 
@@ -61,13 +62,13 @@ For complete information and documentation regarding plugin,please visit below l
 
 == Frequently Asked Questions ==
 = What does this plugin do? =
-This plugin provides the ability to add various pinterest widgets by using widgets and shortcodes to the site.
+This plugin provides the ability to add various pinterest widgets by using widgets and shortcodes to the site. Option to enable the pin it button over images.
 
 = Will it effect my site's speed? =
-No , because we have used the native pinterest widget builder functions in the plugin.
+No, because we have used the native pinterest widget builder functions in the plugin.
 
 = Where can I find the documentation for the plugin? =
-Once you install the plugin , you can check some general documentation about how to use the plugin in the "How to use" panel of the plugin's settings page.Complete documentation can be found  [here](https://accesspressthemes.com/documentation/documentation-plugin-instruction-accesspress-pinterest/).
+Once you install the plugin, you can check some general documentation about how to use the plugin in the "How to use" panel of the plugin's settings page. Complete documentation can be found  [here](https://accesspressthemes.com/documentation/documentation-plugin-instruction-accesspress-pinterest/).
 
 == Screenshots ==
 1. Backend Pinterest Settings.
@@ -79,7 +80,7 @@ Once you install the plugin , you can check some general documentation about how
 
 == Changelog ==
 = 1.0.0 =
-* Plugin submitted to http://wordpress.org for review and approval
+* Plugin submitted to http://wordpress.org for review and approval.
 
 == Upgrade Notice ==
 There is an update available for the AccessPress Pinterest Plugin. Please update to recieve new updates and bug fixes.
