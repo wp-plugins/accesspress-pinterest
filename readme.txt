@@ -4,7 +4,7 @@ Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social s
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,8 +32,8 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 * Pinterest profile widget.
 * Latest pins feed(caption optional).
 * Lightweight - Installs in seconds.
-* User friendly - very easy to configure and setup. 
-* Shortcodes and widgets available. 
+* User friendly - very easy to configure and setup.
+* Shortcodes and widgets available.
 * Super support - get support via email/support forum/online chat.
 
 = Some Useful Links =
@@ -79,6 +79,10 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 1.0.1 =
+* Code fixes for localization.
+* Text modification for the pinterest settings page.
+
 = 1.0.0 =
 * Plugin submitted to http://wordpress.org for review and approval.
 

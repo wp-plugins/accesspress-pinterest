@@ -63,12 +63,12 @@
         <label for='apsp-pinterest-button-size' class='apsp-disable-pinit-js'><?php _e('Disable pinit.js?', APSP_TEXT_DOMAIN ); ?> </label>
         <div class="check-box-disable">
             <input type='checkbox' id='apsp-pinterest-button-size' name='apsp-pinit-js-disable' <?php if(isset($options['pinit_js_disable']) && $options['pinit_js_disable'] =='on'){ ?> checked='checked'; <?php } ?>/> <?php _e('Disable output of pinit.js, the JavaScript file from this plugin.', APSP_TEXT_DOMAIN ); ?>
-            <p class='apsp-info'>Check this option if you have pinit.js already called in another plugin or theme. Multiple insertion of pinit.js more than once on a page can cause conflicts.</p>
+            <p class='apsp-info'><?php _e('Check this option if you have pinit.js already called in another plugin or theme. Multiple insertion of pinit.js on a page can cause conflicts.', APSP_TEXT_DOMAIN ); ?></p>
         </div>
     </div>
     <h2 class="apsp-title"><?php _e('Pinterest Pin it Hover Settings', APSP_TEXT_DOMAIN ); ?></h2>
 	<input type="hidden" name="action" value="apsp_save_options" />
-	<input type='checkbox' name='apsp-pinit-js' <?php if(isset($options['js_enabled']) && $options['js_enabled'] =='on'){ ?> checked='checked'; <?php } ?>/> <?php _e('Enable the Pin It hover button over images', APSP_TEXT_DOMAIN ); ?>
+	<input type='checkbox' name='apsp-pinit-js' <?php if(isset($options['js_enabled']) && $options['js_enabled'] =='on'){ ?> checked='checked'; <?php } ?>/> <?php _e('Enable the Pin It hover button over images.', APSP_TEXT_DOMAIN ); ?>
 	<h3 class="apsp-sub-title"><?php _e('Button apperance settings</h3>', APSP_TEXT_DOMAIN ); ?>
 	<div class="apsp-select-wrapper">
 	<label for='apsp-pinterest-button-size'><?php _e('size:', APSP_TEXT_DOMAIN ); ?> </label>
@@ -86,7 +86,7 @@
 	</select>
 	</div>
 	<div class="apsp-rectangular-options" <?php if($options['shape'] == 'rectangular'){ ?> style="display:block;" <?php }else{ ?>style='display:none;' <?php } ?>>
-	<h3 class="apsp-sub-title"> <?php _e('Options for Rectangular buttons', APSP_TEXT_DOMAIN ); ?></h3>
+	<h3 class="apsp-sub-title"> <?php _e('Options for rectangular shape button', APSP_TEXT_DOMAIN ); ?></h3>
 	<div class="apsp-select-wrapper">
 	<label for='apsp-pinterest-rectangle-color'><?php _e('Color:</label> ', APSP_TEXT_DOMAIN ); ?>
 	<select name='apsp-pinterest-rectangle-color' id='apsp-pinterest-rectangle-color'>

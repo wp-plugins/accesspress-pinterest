@@ -1,23 +1,6 @@
-<?php 
+<?php
 defined('ABSPATH') or die('No script kiddies please!');
-//var_dump($_POST);
-//die();
-
-/*
-
-'action' => string 'apsp_save_options' (length=17)
-  'apsp-pinterest-button-size' => string 'small' (length=5)
-  'apsp-pinterest-button-shape' => string 'rectangular' (length=11)
-  'apsp-pinterest-rectangle-color' => string 'red' (length=3)
-  'apsp-pinterest-rectangle-lang' => string 'english' (length=7)
-  'apsp_add_nonce_save_settings' => string '790eef5ce5' (length=10)
-  '_wp_http_referer' => string '/accesspress-pinterest/wp-admin/admin.php?page=apsp-pinterest' (length=61)
-  'apsp_save_settings' => string 'Save Settings' (length=13)
-
-*/
-
 $apsp_settings = array();
-
 $pinit_js_disable = isset($_POST['apsp-pinit-js-disable']) ? $_POST['apsp-pinit-js-disable'] : 'off';
 $js_enable= isset($_POST['apsp-pinit-js']) ? $_POST['apsp-pinit-js'] : 'off';
 $button_size 	= 	$_POST['apsp-pinterest-button-size'];
@@ -36,6 +19,4 @@ if ($_POST['action'] == 'apsp_save_options') {
     wp_redirect(admin_url() . 'admin.php?page=apsp-pinterest');
     exit;
 }
-
-
  ?>

@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.0.0
+Version: 1.0.1
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.0.0' );
+	define ( 'APSP_VERSION', '1.0.1' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -70,7 +70,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			add_action('admin_post_apsp_restore_default_settings', array($this, 'apsp_restore_default_settings')); //restores default settings.
 
 		}
-
 
 		// function to save the settings of a plugin
 		function apsp_save_options(){
