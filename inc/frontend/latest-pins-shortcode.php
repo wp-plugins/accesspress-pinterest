@@ -1,7 +1,4 @@
 <?php
-
-//var_dump($attr);
-
 $feed_url = isset($attr['feed_url']) ? $attr['feed_url'] : 'https://www.pinterest.com/pinterest';
 $specific_board = isset($attr['specific_board']) ? $attr['specific_board'] : '';
 if(isset($specific_board) && $specific_board !=''){
@@ -33,21 +30,6 @@ $latest_pins = $this->apsp_pinterest_get_rss_feed($feed_url, $number_of_pins_to_
 						<?php  }?>
 					</div>
 				</li>
-				<?php 
-				/*
-					if($caption_enabled == '1'){
-						if($count % 2 =='0'){ ?>
-							<div class='clearfix'></div>
-						<?php
-					}
-					}else{
-						if($count % 3 =='0'){ ?>
-							<div class='clearfix'></div>
-					   <?php
-					    }
-					}
-					*/
-				?>
 				<?php endforeach; 
 			}else{ ?>
 				<li class="apsp-pinterest-latest-pin">

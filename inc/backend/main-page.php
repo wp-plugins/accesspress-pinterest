@@ -3,7 +3,6 @@
 <div class="apsp-setting-header clearfix">
         <div class="apsp-headerlogo">
             <img src="<?php echo APSP_IMAGE_DIR; ?>/logo.png" alt="<?php esc_attr_e('AccessPress Pinterest', APSP_TEXT_DOMAIN); ?>" />
-            <!-- <div class="apsp-logo">AccessPress <span class="pinterest-logo-title"> Pinterest </span></div> -->
         </div>
         <div class="apsp-right-header-block">
         <div class="apsp-header-icons">

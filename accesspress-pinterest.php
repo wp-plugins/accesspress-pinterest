@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.0.1
+Version: 1.0.2
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.0.1' );
+	define ( 'APSP_VERSION', '1.0.2' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -139,7 +139,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
-		
 		function apsp_board_widget_shortcode($board_attr){
 			ob_start();
 			include( 'inc/frontend/board-shortcode.php' );
@@ -161,7 +160,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
             wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', APSP_VERSION );
 			wp_enqueue_script('masionary-js', APSP_JS_DIR . '/jquery-masionary.js', false, array('jquery'), true);
 			wp_enqueue_script('frontend-js', APSP_JS_DIR . '/frontend.js', false, array( 'jquery','masionary-js' ), true);
-			
+
 			if($this->apsp_settings['js_enabled']=='on'){
 				if($this->apsp_settings['pinit_js_disable'] == 'off'){
 					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
@@ -171,7 +170,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 				if($this->apsp_settings['pinit_js_disable'] == 'off'){
 					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
 				}
-				
+
 			}
 		}
 
@@ -183,9 +182,8 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 
 		}
 
-
-		function apsp_pinterest_get_rss_feed( $feed_url, $number_of_pins_to_show ){				
-			// Get a SimplePie feed object from the specified feed source.
+		function apsp_pinterest_get_rss_feed( $feed_url, $number_of_pins_to_show ){
+			// Get a pinterest feed object from the specified feed source.
 			$rss = fetch_feed( $feed_url );
 			if (!is_wp_error( $rss ) ){
 				// Figure out how many total items there are, but limit it to number specified
@@ -216,11 +214,11 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $url;
 		}
 		$return_string = "' async";
-		$hover_op = $this->apsp_settings['js_enabled'];  // get_option('pin_it_button_hover'); 
-		$color_op = $this->apsp_settings['color'];  //get_option('pin_it_button_color');
-		$size_op = $this->apsp_settings['size'];  //get_option('pin_it_button_size');
-		$lang_op = $this->apsp_settings['language'];  //get_option('pin_it_button_lang');
-		$shape_op = $this->apsp_settings['shape'];  //get_option('pin_it_button_shape');
+		$hover_op = $this->apsp_settings['js_enabled'];
+		$color_op = $this->apsp_settings['color'];
+		$size_op = $this->apsp_settings['size'];
+		$lang_op = $this->apsp_settings['language'];
+		$shape_op = $this->apsp_settings['shape'];
 
 		// if image hover is enabled, append the data-pin-hover attribute
 		if(isset($hover_op) && $hover_op == "on") {

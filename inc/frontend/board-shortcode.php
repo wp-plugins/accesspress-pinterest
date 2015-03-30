@@ -1,12 +1,4 @@
 <?php
-
-//var_dump($board_attr);
-
-  /*'board_url' => string 'http://www.pinterest.com/pinterest/pin-pets/' (length=44)
-  'image_width' => string '100' (length=3)
-  'board_height' => string '540' (length=3)
-  'board_width' => string '800' (length=3)*/
-
 $board_url 		= isset($board_attr['board_url'] ) ? $board_attr['board_url'] : 'http://www.pinterest.com/pinterest/pin-pets/';
 $custom_size 	= isset($board_attr['custom_size']) ? $board_attr['custom_size'] : 'square';
 
@@ -41,8 +33,6 @@ switch ($custom_size) {
 					$board_width 	= isset( $board_attr['board_width'] ) 	? $board_attr['board_width'] : '400' ;
                     break;
 }
-
-
 
 ?>
 
