@@ -434,3 +434,22 @@
   margin: 0 0 20px;
   padding-left: 30px;
 }
+
+/*
+
+*/
+
+.apsp-add-wrapper {
+  float: left;
+  width: 28%;
+  margin-top: 20px;
+}
+
+.apsp-main-wrapper {
+  float: left;
+  width: 70%;
+}
+
+.apsp-promo-buttons a {
+  margin: 0 18px;
+}

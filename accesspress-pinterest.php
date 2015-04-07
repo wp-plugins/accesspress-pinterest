@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.0.2
+Version: 1.0.3
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.0.2' );
+	define ( 'APSP_VERSION', '1.0.3' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -42,13 +42,13 @@ if(!defined('APSP_SETTINGS')){
 	define('APSP_SETTINGS', 'apsp-settings');
 }
 
-/**
+/*
  * Register of widgets
- * */
+ * 
+ */
 include_once('inc/backend/widget.php');
 
 //Decleration of the class for necessary configuration of a plugin
-
 if ( !class_exists( 'APSP_Class_free' ) ){
 	class APSP_Class_free{
 		var $apsp_settings;
@@ -115,6 +115,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			register_widget( 'APSP_Latest_Pins_Widget_Free' );
 		}
 
+		//pinterest follow button shortcode generator
 		function apsp_follow_button_shortcode($attr){
 			ob_start();
 			include( 'inc/frontend/follow-shortcode.php' );
@@ -123,6 +124,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//pinterest single pin widget shortcode
 		function apsp_pin_widget_shortcode($atts){
 			ob_start();
 			include( 'inc/frontend/pin-widget-shortcode.php' );
@@ -131,6 +133,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//pinterest profile widget shortcode
 		function apsp_profile_widget_shortcode($profile_attr){
 			ob_start();
 			include( 'inc/frontend/profile-shortcode.php' );
@@ -139,6 +142,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//pinterest board widget shortcode
 		function apsp_board_widget_shortcode($board_attr){
 			ob_start();
 			include( 'inc/frontend/board-shortcode.php' );
@@ -147,6 +151,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//pinterest latest pins widget shortcode
 		function apsp_latest_pins_widget_shortcode($attr){
 			ob_start();
 			include( 'inc/frontend/latest-pins-shortcode.php' );
@@ -155,6 +160,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//registration of the plugins frontend assets
 		function register_frontend_assets(){
             wp_enqueue_style('apsp-font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans', array(), false);
             wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', APSP_VERSION );
@@ -174,6 +180,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			}
 		}
 
+		//registration of the backend assets
 		function register_admin_assets(){
 			wp_enqueue_style('apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', APSP_VERSION );
 			wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/backend.css', APSP_VERSION );
@@ -182,6 +189,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 
 		}
 
+		//function to get the rss feed items from pinterest
 		function apsp_pinterest_get_rss_feed( $feed_url, $number_of_pins_to_show ){
 			// Get a pinterest feed object from the specified feed source.
 			$rss = fetch_feed( $feed_url );
@@ -195,82 +203,83 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			}
 		}
 
+
 		function trim_text( $text, $length ) {
-		//strip html
-		$text = strip_tags( $text );
-		//no need to trim if its shorter than length
-		if (strlen($text) <= $length) {
-			return $text;
-		}
-		$last_space = strrpos( substr( $text, 0, $length ), ' ');
-		$trimmed_text = substr( $text, 0, $last_space );
-		$trimmed_text .= '...';
-		return $trimmed_text;
-	}
-
-	function pinit_js_config($url) {
-		if (FALSE === strpos($url, 'pinit') || FALSE === strpos($url, '.js') || FALSE === strpos($url, 'pinterest.com')) {
-			// this isn't a Pinterest URL, ignore it
-			return $url;
-		}
-		$return_string = "' async";
-		$hover_op = $this->apsp_settings['js_enabled'];
-		$color_op = $this->apsp_settings['color'];
-		$size_op = $this->apsp_settings['size'];
-		$lang_op = $this->apsp_settings['language'];
-		$shape_op = $this->apsp_settings['shape'];
-
-		// if image hover is enabled, append the data-pin-hover attribute
-		if(isset($hover_op) && $hover_op == "on") {
-			$return_string = "$return_string data-pin-hover='true";
+			//strip html
+			$text = strip_tags( $text );
+				//no need to trim if its shorter than length
+				if (strlen($text) <= $length) {
+					return $text;
+				}
+			$last_space = strrpos( substr( $text, 0, $length ), ' ');
+			$trimmed_text = substr( $text, 0, $last_space );
+			$trimmed_text .= '...';
+			return $trimmed_text;
 		}
 
-		// add the shape
-		if(isset($shape_op) && $shape_op =='round') {
-			$return_string = "$return_string' data-pin-shape='$shape_op";
-		}
-
-		// add the size only if it's set to something besides small
-		if(isset($size_op)) {
-			if($size_op == "28" &&  $shape_op == 'rectangular') {
-				$return_string = "$return_string' data-pin-height='$size_op";
-
-			}else if($size_op == "28" && $shape_op =='round'){
-				$size_op = '32';
-				$return_string = "$return_string' data-pin-height='$size_op";
+		function pinit_js_config($url) {
+			if (FALSE === strpos($url, 'pinit') || FALSE === strpos($url, '.js') || FALSE === strpos($url, 'pinterest.com')) {
+				// this isn't a Pinterest URL, ignore it
+				return $url;
 			}
-		}
+			$return_string = "' async";
+			$hover_op = $this->apsp_settings['js_enabled'];
+			$color_op = $this->apsp_settings['color'];
+			$size_op = $this->apsp_settings['size'];
+			$lang_op = $this->apsp_settings['language'];
+			$shape_op = $this->apsp_settings['shape'];
 
-		// if shape is not round, add the color and language
-		if($shape_op != "round") {
-			// add the color
-			if(isset($color_op)) {
-				$return_string = "$return_string' data-pin-color='$color_op";
+			// if image hover is enabled, append the data-pin-hover attribute
+			if(isset($hover_op) && $hover_op == "on") {
+				$return_string = "$return_string data-pin-hover='true";
 			}
-			// add the language (EN or JP)
-			if(isset($lang_op)) {
-				$return_string = "$return_string' data-pin-lang='$lang_op";
+
+			// add the shape
+			if(isset($shape_op) && $shape_op =='round') {
+				$return_string = "$return_string' data-pin-shape='$shape_op";
 			}
+
+			// add the size only if it's set to something besides small
+			if(isset($size_op)) {
+				if($size_op == "28" &&  $shape_op == 'rectangular') {
+					$return_string = "$return_string' data-pin-height='$size_op";
+
+				}else if($size_op == "28" && $shape_op =='round'){
+					$size_op = '32';
+					$return_string = "$return_string' data-pin-height='$size_op";
+				}
+			}
+
+			// if shape is not round, add the color and language
+			if($shape_op != "round") {
+				// add the color
+				if(isset($color_op)) {
+					$return_string = "$return_string' data-pin-color='$color_op";
+				}
+				// add the language (EN or JP)
+				if(isset($lang_op)) {
+					$return_string = "$return_string' data-pin-lang='$lang_op";
+				}
+			}
+			if($return_string == "") {
+				return $url;
+			}
+			return $url . $return_string;
 		}
-		if($return_string == "") {
-			return $url;
-		}
-		return $url . $return_string;
-	}
 	
-	//function to restore the default setting of a plugin
-	function apsp_restore_default_settings(){
-		$nonce = $_REQUEST['_wpnonce'];
-            if (!empty($_GET) && wp_verify_nonce($nonce, 'apsp-restore-default-settings-nonce')) {
-                //restore the default plugin activation settings from the activation page.
-                include( 'inc/backend/activation.php' );
-                $_SESSION['apsp_message'] = __('Settings restored Successfully.', APSP_TEXT_DOMAIN);
-                wp_redirect( admin_url() . 'admin.php?page='.APSP_TEXT_DOMAIN );
-                exit;
-            } else {
-                die('No script kiddies please!');
-            }
-	}
+		//function to restore the default setting of a plugin
+		function apsp_restore_default_settings(){
+			$nonce = $_REQUEST['_wpnonce'];
+	            if (!empty($_GET) && wp_verify_nonce($nonce, 'apsp-restore-default-settings-nonce')) {
+	                //restore the default plugin activation settings from the activation page.
+	                include( 'inc/backend/activation.php' );
+	                $_SESSION['apsp_message'] = __('Settings restored Successfully.', APSP_TEXT_DOMAIN);
+	                wp_redirect( admin_url() . 'admin.php?page='.APSP_TEXT_DOMAIN );
+	                exit;
+	            } else {
+	                die('No script kiddies please!');
+	            }
+		}
 
 	}
 

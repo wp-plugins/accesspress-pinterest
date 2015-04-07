@@ -1,5 +1,6 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
-
+<div class="apsp-outer-wrapper">
+<div class='apsp-main-wrapper'>    
 <div class="apsp-setting-header clearfix">
         <div class="apsp-headerlogo">
             <img src="<?php echo APSP_IMAGE_DIR; ?>/logo.png" alt="<?php esc_attr_e('AccessPress Pinterest', APSP_TEXT_DOMAIN); ?>" />
@@ -11,7 +12,8 @@
                 <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FAccessPress-Themes%2F1396595907277967&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=1411139805828592" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px; width:50px " allowtransparency="true"></iframe>
                 &nbsp;&nbsp;
                 <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.5f46501ecfda1c3e1c05dd3e24875611.en.html#_=1421918256492&amp;dnt=true&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=apthemes&amp;show_count=false&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 126px; height: 20px;"></iframe>
-                <script>!function (d, s, id) {
+                <script>
+                !function (d, s, id) {
                         var js, fjs = d.getElementsByTagName(s)[0];
                         if (!d.getElementById(id)) {
                             js = d.createElement(s);
@@ -19,7 +21,8 @@
                             js.src = "//platform.twitter.com/widgets.js";
                             fjs.parentNode.insertBefore(js, fjs);
                         }
-                    }(document, "script", "twitter-wjs");</script>
+                    }(document, "script", "twitter-wjs");
+                </script>
 
             </div>
         </div>
@@ -55,20 +58,19 @@
 
 <div class="apsp-form-wrap">
 <form action="<?php echo admin_url() . 'admin-post.php' ?>" method='post'>
-
 <div class='apsp-tab-contents apsp-active-tab' id='tab-apsp-pinit-hover-settings'>
 	<h2 class="apsp-title"><?php _e('Pinterest pinit.js Loading settings', APSP_TEXT_DOMAIN ); ?></h2>
     <div class="disable-wrap clearfix">
-        <label for='apsp-pinterest-button-size' class='apsp-disable-pinit-js'><?php _e('Disable pinit.js?', APSP_TEXT_DOMAIN ); ?> </label>
+        <label class='apsp-disable-pinit-js'><?php _e('Disable pinit.js?', APSP_TEXT_DOMAIN ); ?> </label>
         <div class="check-box-disable">
-            <input type='checkbox' id='apsp-pinterest-button-size' name='apsp-pinit-js-disable' <?php if(isset($options['pinit_js_disable']) && $options['pinit_js_disable'] =='on'){ ?> checked='checked'; <?php } ?>/> <?php _e('Disable output of pinit.js, the JavaScript file from this plugin.', APSP_TEXT_DOMAIN ); ?>
+            <input type='checkbox' id='apsp-disable-pinit-js' name='apsp-pinit-js-disable' <?php if(isset($options['pinit_js_disable']) && $options['pinit_js_disable'] =='on'){ ?> checked='checked'; <?php } ?>/> <label for='apsp-disable-pinit-js' ><?php _e('Disable output of pinit.js, the JavaScript file from this plugin.', APSP_TEXT_DOMAIN ); ?></label>
             <p class='apsp-info'><?php _e('Check this option if you have pinit.js already called in another plugin or theme. Multiple insertion of pinit.js on a page can cause conflicts.', APSP_TEXT_DOMAIN ); ?></p>
         </div>
     </div>
     <h2 class="apsp-title"><?php _e('Pinterest Pin it Hover Settings', APSP_TEXT_DOMAIN ); ?></h2>
 	<input type="hidden" name="action" value="apsp_save_options" />
-	<input type='checkbox' name='apsp-pinit-js' <?php if(isset($options['js_enabled']) && $options['js_enabled'] =='on'){ ?> checked='checked'; <?php } ?>/> <?php _e('Enable the Pin It hover button over images.', APSP_TEXT_DOMAIN ); ?>
-	<h3 class="apsp-sub-title"><?php _e('Button apperance settings</h3>', APSP_TEXT_DOMAIN ); ?>
+	<input type='checkbox' id='apsp_js_enabled' name='apsp-pinit-js' <?php if(isset($options['js_enabled']) && $options['js_enabled'] =='on'){ ?> checked='checked'; <?php } ?>/> <label for='apsp_js_enabled'><?php _e('Enable the Pin It hover button over images.', APSP_TEXT_DOMAIN ); ?></label>
+	<h3 class="apsp-sub-title"><?php _e('Button apperance settings', APSP_TEXT_DOMAIN ); ?></h3>
 	<div class="apsp-select-wrapper">
 	<label for='apsp-pinterest-button-size'><?php _e('size:', APSP_TEXT_DOMAIN ); ?> </label>
 	<select name='apsp-pinterest-button-size' id='apsp-pinterest-button-size'>
@@ -87,7 +89,7 @@
 	<div class="apsp-rectangular-options" <?php if($options['shape'] == 'rectangular'){ ?> style="display:block;" <?php }else{ ?>style='display:none;' <?php } ?>>
 	<h3 class="apsp-sub-title"> <?php _e('Options for rectangular shape button', APSP_TEXT_DOMAIN ); ?></h3>
 	<div class="apsp-select-wrapper">
-	<label for='apsp-pinterest-rectangle-color'><?php _e('Color:</label> ', APSP_TEXT_DOMAIN ); ?>
+	<label for='apsp-pinterest-rectangle-color'><?php _e('Color: ', APSP_TEXT_DOMAIN ); ?></label>
 	<select name='apsp-pinterest-rectangle-color' id='apsp-pinterest-rectangle-color'>
 		<option value='red' <?php selected( $options['color'], 'red' ); ?>><?php _e('Red', APSP_TEXT_DOMAIN ); ?></option>
 		<option value='gray' <?php selected( $options['color'], 'gray' ); ?>><?php _e('Gray', APSP_TEXT_DOMAIN ); ?></option>
@@ -96,10 +98,10 @@
 	</div>
 
 	<div class="apsp-select-wrapper">
-	<label for='apsp-pinterest-rectangle-lang'><?php _e('Language:</label>', APSP_TEXT_DOMAIN ); ?>
+	<label for='apsp-pinterest-rectangle-lang'><?php _e('Language:', APSP_TEXT_DOMAIN ); ?></label>
 	<select name='apsp-pinterest-rectangle-lang' id='apsp-pinterest-rectangle-lang'>
-		<option value='english' <?php selected( $options['language'], 'english' ); ?> ><?php _e('English</option>', APSP_TEXT_DOMAIN ); ?>
-		<option value='ja' <?php selected( $options['language'], 'ja' ); ?> ><?php _e('Japanese</option>', APSP_TEXT_DOMAIN ); ?>
+		<option value='english' <?php selected( $options['language'], 'english' ); ?> ><?php _e('English', APSP_TEXT_DOMAIN ); ?></option>
+		<option value='ja' <?php selected( $options['language'], 'ja' ); ?> ><?php _e('Japanese', APSP_TEXT_DOMAIN ); ?></option>
 	</select>
 	</div>
 	</div>
@@ -123,3 +125,12 @@
 </form>
 </div> <!-- apsp form wrapper -->
 </div> <!-- apsp backend wrapper -->
+</div> <!-- apsp main wrapper -->
+
+<div class='apsp-add-wrapper'>
+        <img src="<?php echo APSP_IMAGE_DIR; ?>/promo-top.jpg" alt="promo-top">
+        <div class="apsp-promo-buttons"><a target="_blank" href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-pinterest-pro"><img src="<?php echo APSP_IMAGE_DIR; ?>/demo-btn.png" alt="demo link"></a><a target="_blank" href="http://codecanyon.net/item/accesspress-pinterest-pro/11038373?ref=AccessKeys"><img src="<?php echo APSP_IMAGE_DIR; ?>/upgrade-btn.png" alt="upgrade link"></a></div>
+        <img src="<?php echo APSP_IMAGE_DIR; ?>/promo-bottom.jpg" alt="promo-bottom">
+        <div class="apsp-promo-buttons"><a target="_blank" href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-pinterest-pro"><img src="<?php echo APSP_IMAGE_DIR; ?>/demo-btn.png" alt="demo link"></a><a target="_blank" href="http://codecanyon.net/item/accesspress-pinterest-pro/11038373?ref=AccessKeys"><img src="<?php echo APSP_IMAGE_DIR; ?>/upgrade-btn.png" alt="upgrade link"></a></div>
+</div>
+</div> <!-- apsp outer wrapper -->
