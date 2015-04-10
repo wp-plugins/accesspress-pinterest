@@ -22,7 +22,7 @@ In just 1 minute setup you can use:
 
 This is very easy to setup and use plugin, has both shortcode and widget options. Make your content’s social reach to next level.
 
-= Features: =
+= Free Features: =
 * Pin it button for images.
 * Pin it button configuration (size, shape).
 * Pin it button color customization.
@@ -35,6 +35,21 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 * User friendly - very easy to configure and setup.
 * Shortcodes and widgets available.
 * Super support - get support via email/support forum/online chat.
+
+= Pro Features: =
+★ Add custom pin it buttons.
+★ 40 icon sets available to choose for custom pin it buttons.
+★ Upload your own pin it button.
+★ Define the position of the custom pin it button.
+★ Option to show the pin it buttons always or on hover.
+★ Comapctibility with mobile devices.
+★ Supports custom post types and custom taxonomies.
+★ Options to enable or disable the pin it button for each posts and pages.
+★ Options to display the pin it buttons for home page, front page, posts, pages, categories, archives.
+
+= Premium upgrade =
+
+For premium upgrade please go [here](https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest-pro/)
 
 = Some Useful Links =
 * <strong>Support Email</strong>: support@accesspressthemes.com
