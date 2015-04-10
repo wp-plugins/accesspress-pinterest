@@ -53,7 +53,8 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 
 	★ Options to enable or disable the pin it button for each posts and pages.
 
-	★ Options to display the pin it buttons for home page, front page, posts, pages, categories, archives.
+	★ Options to display the pin it buttons for home page, front page, posts,
+	 pages, categories, archives.
 
 = Premium upgrade =
 
