@@ -4,7 +4,7 @@ Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social s
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,8 +53,7 @@ This is very easy to setup and use plugin, has both shortcode and widget options
 
 	★ Options to enable or disable the pin it button for each posts and pages.
 
-	★ Options to display the pin it buttons for home page, front page, posts,
-	 pages, categories, archives.
+	★ Options to display the pin it buttons for home page, front page, posts, pages, categories, archives.
 
 = Premium upgrade =
 
@@ -103,6 +102,9 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 1.0.4 =
+* Backend css modification for menu tabs.
+
 = 1.0.3 =
 * Minor fixes in the backend options settings page.
 * Upgrade banner addition.
