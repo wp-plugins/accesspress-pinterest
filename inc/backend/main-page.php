@@ -128,9 +128,9 @@
 </div> <!-- apsp main wrapper -->
 
 <div class='apsp-add-wrapper'>
-        <img src="<?php echo APSP_IMAGE_DIR; ?>/promo-top.jpg" alt="promo-top">
+        <a href="https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest-pro/" target="_blank" ><img src="<?php echo APSP_IMAGE_DIR; ?>/promo-top.jpg" alt="promo-top"></a>
         <div class="apsp-promo-buttons"><a target="_blank" href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-pinterest-pro"><img src="<?php echo APSP_IMAGE_DIR; ?>/demo-btn.png" alt="demo link"></a><a target="_blank" href="http://codecanyon.net/item/accesspress-pinterest-pro/11038373?ref=AccessKeys"><img src="<?php echo APSP_IMAGE_DIR; ?>/upgrade-btn.png" alt="upgrade link"></a></div>
-        <img src="<?php echo APSP_IMAGE_DIR; ?>/promo-bottom.jpg" alt="promo-bottom">
+        <a href="https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest-pro/" target="_blank" ><img src="<?php echo APSP_IMAGE_DIR; ?>/promo-bottom.jpg" alt="promo-bottom"></a>
         <div class="apsp-promo-buttons"><a target="_blank" href="http://accesspressthemes.com/demo/wordpress-plugins/accesspress-pinterest-pro"><img src="<?php echo APSP_IMAGE_DIR; ?>/demo-btn.png" alt="demo link"></a><a target="_blank" href="http://codecanyon.net/item/accesspress-pinterest-pro/11038373?ref=AccessKeys"><img src="<?php echo APSP_IMAGE_DIR; ?>/upgrade-btn.png" alt="upgrade link"></a></div>
 </div>
 </div> <!-- apsp outer wrapper -->

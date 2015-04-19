@@ -1,10 +1,10 @@
-=== AccessPress Pinterest ===
+﻿=== AccessPress Pinterest ===
 Contributors: Access Keys
 Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social share pinterest, social share, social media, social network, follow, pinterest pin, shortcode
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,11 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 1.0.5 =
+* Backend's about section css correction.
+* Link addition to banner images.
+* Code optimization of the plugin.
+
 = 1.0.4 =
 * Backend css modification for menu tabs.
 

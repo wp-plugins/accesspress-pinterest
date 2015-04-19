@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.0.4
+Version: 1.0.5
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,12 +14,11 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.0.4' );
+	define ( 'APSP_VERSION', '1.0.5' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
 	define( 'APSP_IMAGE_DIR', plugin_dir_url( __FILE__ ) .'images' );
-
 }
 
 if( !defined( 'APSP_JS_DIR' ) ){
@@ -44,7 +43,7 @@ if(!defined('APSP_SETTINGS')){
 
 /*
  * Register of widgets
- * 
+ *
  */
 include_once('inc/backend/widget.php');
 
@@ -68,43 +67,66 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			add_shortcode('apsp-latest-pins', array($this, 'apsp_latest_pins_widget_shortcode') );
 			add_action('admin_post_apsp_save_options', array($this, 'apsp_save_options')); //save the options in the wordpress options table.
 			add_action('admin_post_apsp_restore_default_settings', array($this, 'apsp_restore_default_settings')); //restores default settings.
-
 		}
 
-		// function to save the settings of a plugin
-		function apsp_save_options(){
-			if(isset($_POST['apsp_add_nonce_save_settings']) && isset($_POST['apsp_save_settings']) && wp_verify_nonce($_POST['apsp_add_nonce_save_settings'], 'apsp_nonce_save_settings') )
-			include( 'inc/backend/save-settings.php' );
-		}
-
-		//load the default settings of the plugin
-		function plugin_activation(){
-			if( !get_option( APSP_SETTINGS ) ){
-				include('inc/backend/activation.php');
-			}
-		}
-
-		//loads the text domain for translation
-		function plugin_text_domain(){
-			load_plugin_textdomain( APSP_TEXT_DOMAIN, false, APSP_LANG_DIR);
-		}
-		
 		//starts the session with the call of init hook
         function session_init() {
             if (!session_id()) {
                 session_start();
             }
         }
+        
+		//load the default settings of the plugin
+		function plugin_activation(){
+			if( !get_option( APSP_SETTINGS ) ){
+				include('inc/backend/activation.php');
+			}
+		}
+		
+		//loads the text domain for translation
+		function plugin_text_domain(){
+			load_plugin_textdomain( APSP_TEXT_DOMAIN, false, APSP_LANG_DIR);
+		}
+		
+		//registration of the backend assets
+		function register_admin_assets(){
+			if(isset($_GET['page']) && $_GET['page']=='apsp-pinterest'){
+				
+			wp_enqueue_style('apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', APSP_VERSION );
+			wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/backend.css', APSP_VERSION );
+			wp_enqueue_script('apsp-backend-js', APSP_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'),  APSP_VERSION);
+			}
+		}
+
+		//registration of the plugins frontend assets
+		function register_frontend_assets(){
+            wp_enqueue_style('apsp-font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans', array(), false);
+            wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', APSP_VERSION );
+			wp_enqueue_script('masionary-js', APSP_JS_DIR . '/jquery-masionary.js', false, array('jquery'), true);
+			wp_enqueue_script('frontend-js', APSP_JS_DIR . '/frontend.js', false, array( 'jquery','masionary-js' ), true);
+
+			if($this->apsp_settings['js_enabled']=='on'){
+				if($this->apsp_settings['pinit_js_disable'] == 'off'){
+					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
+				}
+				add_filter('clean_url', array($this, 'pinit_js_config'));
+			}else{
+				if($this->apsp_settings['pinit_js_disable'] == 'off'){
+					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
+				}
+
+			}
+		}
 
 		//register the plugin menu for backend.
 		function add_apsp_menu(){
 			add_menu_page( 'AccessPress Pinterest', 'AccessPress Pinterest', 'manage_options', APSP_TEXT_DOMAIN , array( $this, 'main_page' ), APSP_IMAGE_DIR . '/apsp-icon.png' );
 		}
 
-		//plugins backend admin page
-		function main_page() {
-			include('inc/backend/main-page.php');
-		}
+			//plugins backend admin page
+			function main_page() {
+				include('inc/backend/main-page.php');
+			}
 
 		//registration of the widget
 		function add_apsp_widget(){
@@ -119,15 +141,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 		function apsp_follow_button_shortcode($attr){
 			ob_start();
 			include( 'inc/frontend/follow-shortcode.php' );
-			$html= ob_get_contents();
-			ob_get_clean();
-			return $html;
-		}
-
-		//pinterest single pin widget shortcode
-		function apsp_pin_widget_shortcode($atts){
-			ob_start();
-			include( 'inc/frontend/pin-widget-shortcode.php' );
 			$html= ob_get_contents();
 			ob_get_clean();
 			return $html;
@@ -151,6 +164,15 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		//pinterest single pin widget shortcode
+		function apsp_pin_widget_shortcode($atts){
+			ob_start();
+			include( 'inc/frontend/pin-widget-shortcode.php' );
+			$html= ob_get_contents();
+			ob_get_clean();
+			return $html;
+		}
+
 		//pinterest latest pins widget shortcode
 		function apsp_latest_pins_widget_shortcode($attr){
 			ob_start();
@@ -158,35 +180,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			$html= ob_get_contents();
 			ob_get_clean();
 			return $html;
-		}
-
-		//registration of the plugins frontend assets
-		function register_frontend_assets(){
-            wp_enqueue_style('apsp-font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans', array(), false);
-            wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', APSP_VERSION );
-			wp_enqueue_script('masionary-js', APSP_JS_DIR . '/jquery-masionary.js', false, array('jquery'), true);
-			wp_enqueue_script('frontend-js', APSP_JS_DIR . '/frontend.js', false, array( 'jquery','masionary-js' ), true);
-
-			if($this->apsp_settings['js_enabled']=='on'){
-				if($this->apsp_settings['pinit_js_disable'] == 'off'){
-					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
-				}
-				add_filter('clean_url', array($this, 'pinit_js_config'));
-			}else{
-				if($this->apsp_settings['pinit_js_disable'] == 'off'){
-					wp_enqueue_script('pinit-js', '//assets.pinterest.com/js/pinit.js', false, null, true);
-				}
-
-			}
-		}
-
-		//registration of the backend assets
-		function register_admin_assets(){
-			wp_enqueue_style('apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', APSP_VERSION );
-			wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/backend.css', APSP_VERSION );
-			wp_enqueue_script('apsp-backend-js', APSP_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'),  APSP_VERSION);
-
-
 		}
 
 		//function to get the rss feed items from pinterest
@@ -202,7 +195,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 				return false;
 			}
 		}
-
 
 		function trim_text( $text, $length ) {
 			//strip html
@@ -267,6 +259,12 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $url . $return_string;
 		}
 	
+		// function to save the settings of a plugin
+		function apsp_save_options(){
+			if(isset($_POST['apsp_add_nonce_save_settings']) && isset($_POST['apsp_save_settings']) && wp_verify_nonce($_POST['apsp_add_nonce_save_settings'], 'apsp_nonce_save_settings') )
+			include( 'inc/backend/save-settings.php' );
+		}
+		
 		//function to restore the default setting of a plugin
 		function apsp_restore_default_settings(){
 			$nonce = $_REQUEST['_wpnonce'];

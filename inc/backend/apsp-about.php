@@ -16,9 +16,9 @@
     <div class="social-more-wrap clearfix">
         <div class="more-title"> More from AccessPress Themes </div>
         <ul class="more-product">
-            <li><a href="https://accesspressthemes.com/plugins/"><span class="prod-title"> Wordpress Plugins </span> <img src="<?php echo APSP_IMAGE_DIR . '/plugin.png'; ?>" /> </a></li>
-            <li><a href="https://accesspressthemes.com/themes/"><span class="prod-title"> Wordpress Themes </span> <img src="<?php echo APSP_IMAGE_DIR . '/theme.png'; ?>" /></a></li>
-            <li><a href="https://accesspressthemes.com/contact/"><span class="prod-title"> Wordpress Customization </span> <img src="<?php echo APSP_IMAGE_DIR . '/customize.png'; ?>" /></a></li>
+            <li><a href="https://accesspressthemes.com/plugins/"><span class="prod-title"> Wordpress Plugins </span> <img src="<?php echo APSP_IMAGE_DIR . '/plugin.png'; ?>" width="100%" /> </a></li>
+            <li><a href="https://accesspressthemes.com/themes/"><span class="prod-title"> Wordpress Themes </span> <img src="<?php echo APSP_IMAGE_DIR . '/theme.png'; ?>" width="100%" /></a></li>
+            <li><a href="https://accesspressthemes.com/contact/"><span class="prod-title"> Wordpress Customization </span> <img src="<?php echo APSP_IMAGE_DIR . '/customize.png'; ?>" width="100%" /></a></li>
         </ul>
     </div>
 
