@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.0.5
+Version: 1.0.6
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.0.5' );
+	define ( 'APSP_VERSION', '1.0.6' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -91,7 +91,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 		//registration of the backend assets
 		function register_admin_assets(){
 			if(isset($_GET['page']) && $_GET['page']=='apsp-pinterest'){
-				
 			wp_enqueue_style('apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', APSP_VERSION );
 			wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/backend.css', APSP_VERSION );
 			wp_enqueue_script('apsp-backend-js', APSP_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'),  APSP_VERSION);
@@ -182,10 +181,17 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			return $html;
 		}
 
+		function return_cache_period( $seconds ) {
+		//please set the integer value in seconds
+			return 2;
+		}
+
 		//function to get the rss feed items from pinterest
 		function apsp_pinterest_get_rss_feed( $feed_url, $number_of_pins_to_show ){
 			// Get a pinterest feed object from the specified feed source.
+			add_filter( 'wp_feed_cache_transient_lifetime' , array( $this, 'return_cache_period' ));
 			$rss = fetch_feed( $feed_url );
+			remove_filter( 'wp_feed_cache_transient_lifetime' , array( $this,'return_cache_period' ));
 			if (!is_wp_error( $rss ) ){
 				// Figure out how many total items there are, but limit it to number specified
 				$maxitems = $rss->get_item_quantity( $number_of_pins_to_show ); 
@@ -278,7 +284,6 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 	                die('No script kiddies please!');
 	            }
 		}
-
 	}
 
 	$apsp_object = new APSP_Class_free();
