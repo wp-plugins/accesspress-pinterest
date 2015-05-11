@@ -12,29 +12,29 @@ $caption_enabled= isset($attr['caption']) ? $attr['caption'] : '0';
 $latest_pins = $this->apsp_pinterest_get_rss_feed($feed_url, $number_of_pins_to_show);
 
 ?>
-		<ul id="apsp-pinterest-latest-pins" <?php if($caption_enabled == '1'){ ?> class='apsp-caption-enabled' <?php }else{ ?> class='apsp-caption-disabled clearfix' <?php } ?>>			
-		<?php
-			if(!empty( $latest_pins ) ){
-				$count=0;
-				foreach ( $latest_pins as $item ):
-					$count++;
-					$rss_pin_description = $item->get_description();			
-					preg_match('/<img[^>]+>/i', $rss_pin_description, $pin_image); 
-					$pin_caption = $this->trim_text( strip_tags( $rss_pin_description ), 400 );
-					?>
-				<li class="apsp-pinterest-latest-pin">
-					<div class="apsp-pinterest-image">
-						<a href="<?php echo esc_url( $item->get_permalink() ); ?>" target="_blank" title="<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>"><?php echo $pin_image[0];?></a>
-						<?php if ( $caption_enabled =='1' ){?>
-						<span class="apsp-pinterest-text"><?php echo strip_tags( $pin_caption ); ?></span>
-						<?php  }?>
-					</div>
-				</li>
-				<?php endforeach; 
-			}else{ ?>
-				<li class="apsp-pinterest-latest-pin">
-					No feeds available
-				</li>
+<ul id="apsp-pinterest-latest-pins" <?php if($caption_enabled == '1'){ ?> class='apsp-caption-enabled' <?php }else{ ?> class='apsp-caption-disabled clearfix' <?php } ?>>			
+<?php
+	if(!empty( $latest_pins ) ){
+		$count=0;
+		foreach ( $latest_pins as $item ):
+			$count++;
+			$rss_pin_description = $item->get_description();
+			preg_match('/https[^"]+/i', $rss_pin_description, $pin_image);
+			$pin_caption = $this->trim_text( strip_tags( $rss_pin_description ), 400 );
+			?>
+		<li class="apsp-pinterest-latest-pin">
+			<div class="apsp-pinterest-image">
+				<a href="<?php echo esc_url( $item->get_permalink() ); ?>" target="_blank" title="<?php echo 'Posted '.$item->get_date('j F Y | g:i a'); ?>" ><img src='<?php echo $pin_image[0]; ?>' alt="<?php echo $item->get_title(); ?>" /></a>
+				<?php if ( $caption_enabled =='1' ){?>
+				<span class="apsp-pinterest-text"><?php echo strip_tags( $pin_caption ); ?></span>
+				<?php  }?>
+			</div>
+		</li>
+		<?php endforeach; 
+	}else{ ?>
+		<li class="apsp-pinterest-latest-pin">
+			No feeds available
+		</li>
 
-			<?php } ?>
-		</ul>
+	<?php } ?>
+</ul>

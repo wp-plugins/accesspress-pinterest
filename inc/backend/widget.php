@@ -86,8 +86,7 @@ class APSP_Follow_Widget_Free extends WP_Widget {
         $color=$instance['pinterest_name'];
         echo "<div class='apsp-widget-free'>";
         echo do_shortcode("[apsp-follow-button name='{$instance['pinterest_name']}' button_label='{$instance['button_label']}']");
-        echo "<div>";
-       
+        echo "</div>";
         echo $args['after_widget'];
     }
 
@@ -110,9 +109,6 @@ class APSP_Follow_Widget_Free extends WP_Widget {
         $instance['button_label'] = (!empty($new_instance['button_label']) ) ? strip_tags($new_instance['button_label']) : '';
         return $instance;
     }
-
-
-
 }
 
 class APSP_Single_Pin_Widget_Free extends WP_Widget {
@@ -148,7 +144,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
         } else {
             $pin_image_url = '';
         }
-
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title: ', APSP_WIDGET_CONSTANT ); ?></label>
@@ -160,7 +155,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
         </p>
         <?php
     }
-
 
      /**
      * Front-end display of widget.
@@ -182,7 +176,7 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
         }else{
         echo "<div class='apsp-widget-free'>";
         echo do_shortcode("[apsp-pin-image image_url='{$instance['pin_image_url']}']");
-        echo "<div>";
+        echo "</div>";
         }
         echo $args['after_widget'];
     }
@@ -205,9 +199,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
         $instance['pin_image_url'] = (!empty($new_instance['pin_image_url']) ) ? strip_tags($new_instance['pin_image_url']) : '';
         return $instance;
     }
-
-
-
 }
 
 //Decleration of the Pinterest class for the pinterest profile widget
@@ -356,8 +347,7 @@ class APSP_Profile_Widget_Free extends WP_Widget {
 
         echo do_shortcode("[apsp-profile-widget profile='{$instance['profile_name']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']");
     	}
-        echo "<div>";
-       
+        echo "</div>";
         echo $args['after_widget'];
     }
 
@@ -383,9 +373,6 @@ class APSP_Profile_Widget_Free extends WP_Widget {
         $instance['custom_sizes'] = (!empty($new_instance['custom_sizes']) ) ? strip_tags($new_instance['custom_sizes']) : '';
         return $instance;
     }
-
-
-
 }
 
 //Decleration of the Pinterest class for the pinterest board widget
@@ -446,7 +433,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
         } else {
             $board_width = '';
         }
-
 
         ?>
         <p>
@@ -533,8 +519,7 @@ class APSP_Board_Widget_Free extends WP_Widget {
 
         echo do_shortcode("[apsp-board-widget board_url='{$instance['pinterest_board_url']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']");
         }
-        echo "<div>";
-       
+        echo "</div>";
         echo $args['after_widget'];
     }
 
@@ -560,9 +545,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
         $instance['board_width'] = (!empty($new_instance['board_width']) ) ? strip_tags($new_instance['board_width']) : '';
         return $instance;
     }
-
-
-
 }
 
 //Decleration of the Pinterest class for the pinterest latest user/board pins widget
@@ -670,7 +652,7 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
 
         echo "<div class='apsp-widget-free'>";
         echo do_shortcode("[apsp-latest-pins feed_url='{$instance['pinterest_feed_url']}' specific_board='{$instance['specific_board']}' feed_count='{$instance['number_of_feeds']}' caption='{$instance['caption_enabled']}']");
-        echo "<div>";
+        echo "</div>";
         echo $args['after_widget'];
     }
 
@@ -695,11 +677,5 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
         $instance['caption_enabled'] = (!empty($new_instance['caption_enabled']) ) ? strip_tags($new_instance['caption_enabled']) : '0';
         return $instance;
     }
-
-
-
 }
-
-
-
 ?>
