@@ -439,6 +439,7 @@ class APSP_Board_Widget_Free extends WP_Widget {
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title: ', APSP_WIDGET_CONSTANT ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder='Title(Optional)'>
         </p>
+        
         <p>
         <label for="<?php echo $this->get_field_id('pinterest_board_url'); ?>"><?php _e('Board URL: ', APSP_WIDGET_CONSTANT ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id('pinterest_board_url'); ?>" name="<?php echo $this->get_field_name('pinterest_board_url'); ?>" type="text" value="<?php echo esc_attr($pinterest_board_url); ?>" placeholder='http://www.pinterest.com/pinterest/pin-pets/' >
@@ -453,8 +454,10 @@ class APSP_Board_Widget_Free extends WP_Widget {
                 <option value="custom"   <?php selected( $custom_sizes, 'custom' ); ?>><?php _e('Custom', APSP_WIDGET_CONSTANT ); ?></option>
             </select>
         </p>
+        
         <div class='apsp-board-custom-size-values' <?php if($custom_sizes == 'custom'){ ?> style="display:block;" <?php }else{ ?>style='display:none;' <?php } ?>>
             <p><?php _e('Please use these values only for custom size widget selection.', APSP_WIDGET_CONSTANT ); ?></p>
+            
             <p>
             <label for="<?php echo $this->get_field_id('image_width'); ?>"><?php _e('Image Width: ', APSP_WIDGET_CONSTANT ); ?></label> 
             <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder='Please enter numbers only.'>
@@ -472,7 +475,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
         </div>
         <?php
     }
-
 
      /**
      * Front-end display of widget.
