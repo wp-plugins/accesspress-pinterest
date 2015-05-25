@@ -1,14 +1,5 @@
+<?php defined( 'ABSPATH' ) or die( "No script kiddies please!" ); ?>
 <?php
-/*
-var_dump($profile_attr);
-array
-  'profile' => string 'shovanjaya55' (length=12)
-  'custom_size' => string 'square' (length=6)
-  'image_width' => string '250' (length=3)
-  'board_height' => string '350' (length=3)
-  'board_width' => string '350' (length=3)
-*/
-
 if(isset($profile_attr['profile'])){
 $profile 		= isset($profile_attr['profile']) ? $profile_attr['profile'] : 'pinterest';  
 }else{

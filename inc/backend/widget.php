@@ -18,8 +18,8 @@ class APSP_Follow_Widget_Free extends WP_Widget {
     function __construct() {
         parent::__construct(
                 'apsp_follow_widget_free', // Base ID
-                __('AccessPress Pinterest follow widget', APSP_WIDGET_CONSTANT ), // Name
-                array('description' => __('AccessPress Pinterest follow widget', APSP_WIDGET_CONSTANT ) ) // Args
+                __( 'AccessPress Pinterest follow widget', APSP_WIDGET_CONSTANT ), // Name
+                array( 'description' => __('AccessPress Pinterest follow widget', APSP_WIDGET_CONSTANT ) ) // Args
         );
     }
 
@@ -32,19 +32,19 @@ class APSP_Follow_Widget_Free extends WP_Widget {
      */
     public function form($instance) {
 
-        if (isset($instance['title'])) {
+        if ( isset($instance['title']) ) {
             $title = $instance['title'];
         } else {
             $title = '';
         }
 
-        if (isset($instance['pinterest_name'])) {
+        if ( isset($instance['pinterest_name']) ) {
             $pinterest_name = $instance['pinterest_name'];
         } else {
             $pinterest_name = '';
         }
 
-        if (isset($instance['button_label'])) {
+        if ( isset($instance['button_label']) ) {
             $button_label = $instance['button_label'];
         } else {
             $button_label = '';
@@ -63,7 +63,6 @@ class APSP_Follow_Widget_Free extends WP_Widget {
         <label for="<?php echo $this->get_field_id('button_label'); ?>"><?php _e('Button Label: ', APSP_WIDGET_CONSTANT ); ?></label> 
         <input class="widefat" id="<?php echo $this->get_field_id('button_label'); ?>" name="<?php echo $this->get_field_name('button_label'); ?>" type="text" value="<?php echo esc_attr($button_label); ?>" placeholder='Follow'>
         </p>
-
         <?php
     }
 
@@ -77,7 +76,6 @@ class APSP_Follow_Widget_Free extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
-
         echo $args['before_widget'];
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
@@ -102,7 +100,6 @@ class APSP_Follow_Widget_Free extends WP_Widget {
      * @return array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
-        //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['pinterest_name'] = (!empty($new_instance['pinterest_name']) ) ? strip_tags($new_instance['pinterest_name']) : '';
@@ -112,7 +109,6 @@ class APSP_Follow_Widget_Free extends WP_Widget {
 }
 
 class APSP_Single_Pin_Widget_Free extends WP_Widget {
-
     /**
      * Register widget with WordPress.
      */
@@ -132,7 +128,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
      * @param array $instance Previously saved values from database.
      */
     public function form($instance) {
-
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
@@ -165,7 +160,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
-
         echo $args['before_widget'];
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
@@ -193,7 +187,6 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
      * @return array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
-        //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['pin_image_url'] = (!empty($new_instance['pin_image_url']) ) ? strip_tags($new_instance['pin_image_url']) : '';
@@ -224,37 +217,37 @@ class APSP_Profile_Widget_Free extends WP_Widget {
      */
     public function form($instance) {
 
-        if (isset($instance['title'])) {
+        if ( isset($instance['title']) ) {
             $title = $instance['title'];
         } else {
             $title = '';
         }
 
-        if (isset($instance['profile_name'])) {
+        if ( isset($instance['profile_name']) ) {
             $profile_name = $instance['profile_name'];
         } else {
             $profile_name = '';
         }
 
-        if (isset($instance['image_width'])) {
+        if (isset($instance['image_width']) ) {
             $image_width = $instance['image_width'];
         } else {
             $image_width = '';
         }
 
-        if (isset($instance['board_height'])) {
+        if ( isset($instance['board_height']) ) {
             $board_height = $instance['board_height'];
         } else {
             $board_height = '';
         }
 
-         if (isset($instance['board_width'])) {
+         if ( isset($instance['board_width']) ) {
             $board_width = $instance['board_width'];
         } else {
             $board_width = '';
         }
 
-        if (isset($instance['custom_sizes'])) {
+        if ( isset($instance['custom_sizes']) ) {
             $custom_sizes = $instance['custom_sizes'];
         } else {
             $custom_sizes = '';
@@ -319,7 +312,7 @@ class APSP_Profile_Widget_Free extends WP_Widget {
         $color=$instance['profile_name'];
         echo "<div class='apsp-widget-free'>";
         if($instance['profile_name'] == ''){
-        	_e("Please enter the pinterest profile name in widget to make the profile widget appear here", APSP_WIDGET_CONSTANT );
+        	_e( "Please enter the pinterest profile name in widget to make the profile widget appear here", APSP_WIDGET_CONSTANT );
         }else{
             switch ($instance['custom_sizes']) {
                 case 'square':
@@ -345,7 +338,7 @@ class APSP_Profile_Widget_Free extends WP_Widget {
                     break;
             }
 
-        echo do_shortcode("[apsp-profile-widget profile='{$instance['profile_name']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']");
+        echo do_shortcode( "[apsp-profile-widget profile='{$instance['profile_name']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']" );
     	}
         echo "</div>";
         echo $args['after_widget'];
@@ -363,7 +356,6 @@ class APSP_Profile_Widget_Free extends WP_Widget {
      * @return array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
-        //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['profile_name'] = (!empty($new_instance['profile_name']) ) ? strip_tags($new_instance['profile_name']) : '';
@@ -397,7 +389,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
      * @param array $instance Previously saved values from database.
      */
     public function form($instance) {
-
         if (isset($instance['title'])) {
             $title = $instance['title'];
         } else {
@@ -485,7 +476,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
-
         echo $args['before_widget'];
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
@@ -493,7 +483,7 @@ class APSP_Board_Widget_Free extends WP_Widget {
 
         echo "<div class='apsp-widget-free'>";
         if($instance['pinterest_board_url'] == ''){
-            _e("Please enter the pinterest board url in widget to make the board widget appear here", APSP_WIDGET_CONSTANT );
+            _e( "Please enter the pinterest board url in widget to make the board widget appear here", APSP_WIDGET_CONSTANT );
         }else{
             switch ($instance['custom_sizes']) {
                 case 'square':
@@ -519,7 +509,7 @@ class APSP_Board_Widget_Free extends WP_Widget {
                     break;
             }
 
-        echo do_shortcode("[apsp-board-widget board_url='{$instance['pinterest_board_url']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']");
+        echo do_shortcode( "[apsp-board-widget board_url='{$instance['pinterest_board_url']}' custom_size='{$instance['custom_sizes']}' image_width='{$instance['image_width']}' board_height='{$instance['board_height']}' board_width='{$instance['board_width']}']" );
         }
         echo "</div>";
         echo $args['after_widget'];
@@ -646,7 +636,6 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
-
         echo $args['before_widget'];
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
@@ -670,7 +659,6 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
      * @return array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
-        //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['pinterest_feed_url'] = (!empty($new_instance['pinterest_feed_url']) ) ? strip_tags($new_instance['pinterest_feed_url']) : '';

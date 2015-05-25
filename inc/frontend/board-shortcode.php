@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) or die( "No script kiddies please!" ); ?>
 <?php
 $board_url 		= isset($board_attr['board_url'] ) ? $board_attr['board_url'] : 'http://www.pinterest.com/pinterest/pin-pets/';
 $custom_size 	= isset($board_attr['custom_size']) ? $board_attr['custom_size'] : 'square';

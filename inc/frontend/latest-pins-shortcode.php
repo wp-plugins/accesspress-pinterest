@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) or die( "No script kiddies please!" ); ?>
 <?php
 $feed_url = isset($attr['feed_url']) ? $attr['feed_url'] : 'https://www.pinterest.com/pinterest';
 $specific_board = isset($attr['specific_board']) ? $attr['specific_board'] : '';

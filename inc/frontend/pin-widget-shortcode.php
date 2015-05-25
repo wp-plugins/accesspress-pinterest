@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) or die( "No script kiddies please!" ); ?>
 <?php
 $atts_image = isset($atts['image_url']) ? $atts['image_url'] : 'https://www.pinterest.com/pin/434034482809764694/';
 ?>
