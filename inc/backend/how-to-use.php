@@ -215,11 +215,16 @@
 					<td>You can enable or disable the image caption from here.</td>
 					<td>No</td>
 				</tr>
+				<tr>
+					<td>show_pinterest_link</td>
+					<td>You can enable or disable the pinterest link from here.</td>
+					<td>No</td>
+				</tr>
 				</tbody>
 			</table>
 
 
 <h4>Examples</h4>
 <ul class="ul-disc">
-	<li><code>[apsp-latest-pins feed_url='https://www.pinterest.com/pinterest' specific_board='breakfast-favorites' feed_count='5' caption='1']</code></li>
+	<li><code>[apsp-latest-pins feed_url='https://www.pinterest.com/pinterest' specific_board='breakfast-favorites' feed_count='5' caption='1' show_pinterest_link='yes']</code></li>
 </ul>

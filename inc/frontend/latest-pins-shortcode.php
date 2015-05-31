@@ -1,16 +1,21 @@
 <?php defined( 'ABSPATH' ) or die( "No script kiddies please!" ); ?>
 <?php
 $feed_url = isset($attr['feed_url']) ? $attr['feed_url'] : 'https://www.pinterest.com/pinterest';
+
 $specific_board = isset($attr['specific_board']) ? $attr['specific_board'] : '';
 if(isset($specific_board) && $specific_board !=''){
+	$pinterest_url=$feed_url.'/'.$specific_board;
 	$feed_url =$feed_url.'/'.$specific_board.'/rss';
 }else{
+	$pinterest_url=$feed_url;
 	$feed_url = $feed_url.'/feed.rss';
 }
 $number_of_pins_to_show = isset($attr['feed_count']) ? $attr['feed_count'] : '4';
 $caption_enabled= isset($attr['caption']) ? $attr['caption'] : '0';
 
 $latest_pins = $this->apsp_pinterest_get_rss_feed($feed_url, $number_of_pins_to_show);
+
+$show_pinterest_link = isset($attr['show_pinterest_link']) ? $attr['show_pinterest_link'] : '';
 
 ?>
 <ul id="apsp-pinterest-latest-pins" <?php if($caption_enabled == '1'){ ?> class='apsp-caption-enabled' <?php }else{ ?> class='apsp-caption-disabled clearfix' <?php } ?>>			
@@ -39,3 +44,6 @@ $latest_pins = $this->apsp_pinterest_get_rss_feed($feed_url, $number_of_pins_to_
 
 	<?php } ?>
 </ul>
+<?php if($show_pinterest_link =='yes'){ ?>
+<div class='apsp-pinterest-link'><a href='<?php echo $pinterest_url; ?>' target='_blank'><?php _e( 'View on Pinterest', APSP_TEXT_DOMAIN ); ?> </a></div>
+<?php } ?>

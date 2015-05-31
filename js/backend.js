@@ -16,7 +16,6 @@ jQuery(document).ready(function($){
 		 }
 	});
 
-
 	$('.widget-liquid-right'). on('change', '.apsp-profile-custom-sizes-selection', function(){
 		var changed_value= $(this).val();
 		 if(changed_value == 'custom'){

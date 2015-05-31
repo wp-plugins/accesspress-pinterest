@@ -592,6 +592,12 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
             $specific_board = '';
         }
 
+        if (isset($instance['show_pinterest_link'])) {
+            $show_pinterest_link = $instance['show_pinterest_link'];
+        } else {
+            $show_pinterest_link = '0';
+        } 
+
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title: ', APSP_WIDGET_CONSTANT ); ?></label>
@@ -623,6 +629,15 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
                 <option value="0"  <?php selected( $caption_enabled, '0' ); ?>><?php    _e('No', APSP_WIDGET_CONSTANT ); ?></option>
             </select>
         </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id('show_pinterest_link'); ?>"><?php _e('Show Pinterest Link?: ', APSP_WIDGET_CONSTANT ); ?></label> 
+             <select name="<?php echo $this->get_field_name('show_pinterest_link'); ?>">
+                <option value="yes" <?php selected( $show_pinterest_link, 'yes' ); ?>><?php     _e('Yes', APSP_WIDGET_CONSTANT ); ?></option>
+                <option value="no"  <?php selected( $show_pinterest_link, 'no' ); ?>><?php    _e('No', APSP_WIDGET_CONSTANT ); ?></option>
+            </select>
+        </p>
+
         <?php
     }
 
@@ -642,7 +657,7 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
         }
 
         echo "<div class='apsp-widget-free'>";
-        echo do_shortcode("[apsp-latest-pins feed_url='{$instance['pinterest_feed_url']}' specific_board='{$instance['specific_board']}' feed_count='{$instance['number_of_feeds']}' caption='{$instance['caption_enabled']}']");
+        echo do_shortcode("[apsp-latest-pins feed_url='{$instance['pinterest_feed_url']}' specific_board='{$instance['specific_board']}' feed_count='{$instance['number_of_feeds']}' caption='{$instance['caption_enabled']}' show_pinterest_link='{$instance['show_pinterest_link']}']");
         echo "</div>";
         echo $args['after_widget'];
     }
@@ -665,6 +680,7 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
         $instance['specific_board'] = (!empty($new_instance['specific_board']) ) ? strip_tags($new_instance['specific_board']) : '';
         $instance['number_of_feeds'] = (!empty($new_instance['number_of_feeds']) ) ? strip_tags($new_instance['number_of_feeds']) : '4';
         $instance['caption_enabled'] = (!empty($new_instance['caption_enabled']) ) ? strip_tags($new_instance['caption_enabled']) : '0';
+        $instance['show_pinterest_link'] = (!empty($new_instance['show_pinterest_link']) ) ? strip_tags($new_instance['show_pinterest_link']) : 'no';
         return $instance;
     }
 }
