@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.1.0
+Version: 1.1.1
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.1.0' );
+	define ( 'APSP_VERSION', '1.1.1' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -91,18 +91,18 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 		//registration of the backend assets
 		function register_admin_assets(){
 			if( isset($_GET['page']) && $_GET['page']=='apsp-pinterest' ){
-			wp_enqueue_style( 'apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', APSP_VERSION );
-			wp_enqueue_style( 'apsp-frontend-css', APSP_CSS_DIR . '/backend.css', APSP_VERSION );
-			wp_enqueue_script( 'apsp-backend-js', APSP_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'),  APSP_VERSION );
+			wp_enqueue_style( 'apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '', APSP_VERSION );
+			wp_enqueue_style( 'apsp-frontend-css', APSP_CSS_DIR . '/backend.css','', APSP_VERSION );
+			wp_enqueue_script( 'apsp-backend-js', APSP_JS_DIR . '/backend.js', array('jquery', 'jquery-ui-sortable', 'wp-color-picker'), APSP_VERSION );
 			}
 		}
 
 		//registration of the plugins frontend assets
 		function register_frontend_assets(){
             wp_enqueue_style( 'apsp-font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans', array(), false );
-            wp_enqueue_style( 'apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', APSP_VERSION );
-			wp_enqueue_script( 'masionary-js', APSP_JS_DIR . '/jquery-masionary.js', false, array('jquery'), true );
-			wp_enqueue_script( 'frontend-js', APSP_JS_DIR . '/frontend.js', false, array( 'jquery','masionary-js' ), true );
+            wp_enqueue_style( 'apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', '', APSP_VERSION );
+			wp_enqueue_script( 'masionary-js', APSP_JS_DIR . '/jquery-masionary.js', array('jquery'), APSP_VERSION, true );
+			wp_enqueue_script( 'frontend-js', APSP_JS_DIR . '/frontend.js', array( 'jquery','masionary-js' ), APSP_VERSION, true );
 
 			if($this->apsp_settings['js_enabled']=='on'){
 				if($this->apsp_settings['pinit_js_disable'] == 'off'){
