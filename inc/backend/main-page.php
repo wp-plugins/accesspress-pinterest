@@ -1,6 +1,6 @@
 <?php defined( 'ABSPATH' ) or die( 'No script kiddies please!' ); ?>
 <div class="apsp-outer-wrapper">
-<div class='apsp-main-wrapper'>    
+<div class='apsp-main-wrapper'>
 <div class="apsp-setting-header clearfix">
         <div class="apsp-headerlogo">
             <img src="<?php echo APSP_IMAGE_DIR; ?>/logo.png" alt="<?php esc_attr_e('AccessPress Pinterest', APSP_TEXT_DOMAIN); ?>" />
@@ -37,7 +37,6 @@
     $options = get_option( APSP_SETTINGS );
     if (isset($_SESSION['apsp_message'])) {
         ?>
-
         <div class="apsp-message">
             <p><?php
                 echo $_SESSION['apsp_message'];

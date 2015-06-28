@@ -38,6 +38,5 @@ $custom_size 	= isset($profile_attr['custom_size']) ? $profile_attr['custom_size
 					$board_width 	= isset($profile_attr['board_width']) ? $profile_attr['board_width'] : '400' ;
                     break;
             }
-
 ?>
 <a data-pin-do="embedUser" href="http://www.pinterest.com/<?php echo $profile; ?>" data-pin-scale-width="<?php echo $image_width; ?>" data-pin-scale-height="<?php echo $board_height; ?>" data-pin-board-width="<?php echo $board_width; ?>"></a>

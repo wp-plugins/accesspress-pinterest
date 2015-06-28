@@ -11,7 +11,7 @@ if ($_POST['action'] == 'apsp_save_options') {
   $apsp_settings['pinit_js_disable'] =$pinit_js_disable;
 	$apsp_settings['js_enabled'] = $js_enable;
 	$apsp_settings['size']=$button_size;
-	$apsp_settings['shape']=$button_shape;	
+	$apsp_settings['shape']=$button_shape;
 	$apsp_settings['color']=$button_color;
 	$apsp_settings['language']=$button_lang;
 	update_option( APSP_SETTINGS, $apsp_settings);

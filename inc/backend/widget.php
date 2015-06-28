@@ -259,8 +259,8 @@ class APSP_Profile_Widget_Free extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" placeholder='Title(optional)'>
         </p>
         <p>
-        <label for="<?php echo $this->get_field_id('profile_name'); ?>"><?php _e('Profile Name: ', APSP_WIDGET_CONSTANT ); ?></label> 
-        <input class="widefat" id="<?php echo $this->get_field_id('profile_name'); ?>" name="<?php echo $this->get_field_name('profile_name'); ?>" type="text" value="<?php echo esc_attr($profile_name); ?>" placeholder='pinterest'>
+            <label for="<?php echo $this->get_field_id('profile_name'); ?>"><?php _e('Profile Name: ', APSP_WIDGET_CONSTANT ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id('profile_name'); ?>" name="<?php echo $this->get_field_name('profile_name'); ?>" type="text" value="<?php echo esc_attr($profile_name); ?>" placeholder='pinterest'>
         </p>
 
         <p>
@@ -274,20 +274,20 @@ class APSP_Profile_Widget_Free extends WP_Widget {
         </p>
 
         <div class='apsp-profile-custom-size-values' <?php if($custom_sizes == 'custom'){ ?> style="display:block;" <?php }else{ ?>style='display:none;' <?php } ?>>
-            <p>Please use these values only for custom size widget selection.</p>
+            <p><?php _e('Please use these values only for custom size widget selection.', APSP_WIDGET_CONSTANT ); ?> </p>
             <p>
             <label for="<?php echo $this->get_field_id('image_width'); ?>"><?php _e('Image Width: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder="<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>">
             </p>
 
             <p>
              <label for="<?php echo $this->get_field_id('board_height'); ?>"><?php _e('Board Height: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('board_height'); ?>" name="<?php echo $this->get_field_name('board_height'); ?>" type="text" value="<?php echo esc_attr($board_height); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('board_height'); ?>" name="<?php echo $this->get_field_name('board_height'); ?>" type="text" value="<?php echo esc_attr($board_height); ?>" placeholder='<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>'>
             </p>
 
             <p>
              <label for="<?php echo $this->get_field_id('board_width'); ?>"><?php _e('Board Width: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('board_width'); ?>" name="<?php echo $this->get_field_name('board_width'); ?>" type="text" value="<?php echo esc_attr($board_width); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('board_width'); ?>" name="<?php echo $this->get_field_name('board_width'); ?>" type="text" value="<?php echo esc_attr($board_width); ?>" placeholder='<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>'>
             </p>
         </div>
         <?php
@@ -451,17 +451,17 @@ class APSP_Board_Widget_Free extends WP_Widget {
             
             <p>
             <label for="<?php echo $this->get_field_id('image_width'); ?>"><?php _e('Image Width: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder='<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>'>
             </p>
 
             <p>
              <label for="<?php echo $this->get_field_id('board_height'); ?>"><?php _e('Board Height: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('board_height'); ?>" name="<?php echo $this->get_field_name('board_height'); ?>" type="text" value="<?php echo esc_attr($board_height); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('board_height'); ?>" name="<?php echo $this->get_field_name('board_height'); ?>" type="text" value="<?php echo esc_attr($board_height); ?>" placeholder='<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>'>
             </p>
 
             <p>
              <label for="<?php echo $this->get_field_id('board_width'); ?>"><?php _e('Board Width: ', APSP_WIDGET_CONSTANT ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id('board_width'); ?>" name="<?php echo $this->get_field_name('board_width'); ?>" type="text" value="<?php echo esc_attr($board_width); ?>" placeholder='Please enter numbers only.'>
+            <input class="widefat" id="<?php echo $this->get_field_id('board_width'); ?>" name="<?php echo $this->get_field_name('board_width'); ?>" type="text" value="<?php echo esc_attr($board_width); ?>" placeholder='<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT ); ?>'>
             </p>
         </div>
         <?php
@@ -527,7 +527,6 @@ class APSP_Board_Widget_Free extends WP_Widget {
      * @return array Updated safe values to be saved.
      */
     public function update($new_instance, $old_instance) {
-        //die(print_r($new_instance));
         $instance = array();
         $instance['title'] = (!empty($new_instance['title']) ) ? strip_tags($new_instance['title']) : '';
         $instance['pinterest_board_url'] = (!empty($new_instance['pinterest_board_url']) ) ? strip_tags($new_instance['pinterest_board_url']) : '';
@@ -596,7 +595,7 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
             $show_pinterest_link = $instance['show_pinterest_link'];
         } else {
             $show_pinterest_link = '0';
-        } 
+        }
 
         ?>
         <p>
@@ -637,7 +636,6 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
                 <option value="no"  <?php selected( $show_pinterest_link, 'no' ); ?>><?php    _e('No', APSP_WIDGET_CONSTANT ); ?></option>
             </select>
         </p>
-
         <?php
     }
 
