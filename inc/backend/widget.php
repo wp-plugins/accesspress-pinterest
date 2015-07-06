@@ -649,6 +649,9 @@ class APSP_Latest_Pins_Widget_Free extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget($args, $instance) {
+        if(!isset($instance['show_pinterest_link'])){
+                $instance['show_pinterest_link'] = '0';
+        }
         echo $args['before_widget'];
         if (!empty($instance['title'])) {
             echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];

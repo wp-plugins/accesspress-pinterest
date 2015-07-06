@@ -4,14 +4,14 @@ Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social s
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Pin it button | Follow Pinterest button | Pin board widgets | Profile widget | Latest pins feed and more.
 
 == Description ==
-<strong>AccessPress Pinterest</strong> is a feature rich<strong> FREE Pinterest plugin</strong> for WordPress. 
+<strong>AccessPress Pinterest</strong> is a feature rich<strong> FREE Pinterest plugin</strong> for WordPress.
 In just 1 minute setup you can use:
 
 * Pin it button on image.
@@ -103,6 +103,9 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 1.1.3 =
+* Fixed the undefined index notice for the latest pins widget.
+
 = 1.1.2 =
 * Done the text domain issues for the widgets.
 * Done the widgets text translation ready.
