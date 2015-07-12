@@ -10,7 +10,7 @@
 				to display within template or theme files.</p>
 
 <h4>Available Attributes</h4>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers" cellspacing="0" border="1">
 				<thead>
 				<tr>
 					<th>Attribute</th>
@@ -45,7 +45,7 @@
 				to display within template or theme files.</p>
 
 <h4>Available Attributes</h4>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers" cellspacing="0" border="1">
 				<thead>
 				<tr>
 					<th>Attribute</th>
@@ -74,7 +74,7 @@
 				to display within template or theme files.</p>
 
 <h4>Available Attributes</h4>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers" cellspacing="0" border="1">
 				<thead>
 				<tr>
 					<th>Attribute</th>
@@ -129,7 +129,7 @@
 				to display within template or theme files.</p>
 
 <h4>Available Attributes</h4>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers" cellspacing="0" border="1">
 				<thead>
 				<tr>
 					<th>Attribute</th>
@@ -185,7 +185,7 @@
 				to display within template or theme files.</p>
 
 <h4>Available Attributes</h4>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers" cellspacing="0" border="1">
 				<thead>
 				<tr>
 					<th>Attribute</th>
