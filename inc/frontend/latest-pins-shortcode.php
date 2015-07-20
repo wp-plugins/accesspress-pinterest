@@ -13,15 +13,14 @@ if(isset($specific_board) && $specific_board !=''){
 $number_of_pins_to_show = isset($attr['feed_count']) ? $attr['feed_count'] : '4';
 $caption_enabled= isset($attr['caption']) ? $attr['caption'] : '0';
 
-$latest_pins = $this->apsp_pinterest_get_rss_feed($feed_url, $number_of_pins_to_show);
+$latest_pins = $this->apsp_pinterest_get_rss_feed( $feed_url, $number_of_pins_to_show );
 
-$show_pinterest_link = isset($attr['show_pinterest_link']) ? $attr['show_pinterest_link'] : '';
+$show_pinterest_link = isset( $attr['show_pinterest_link'] ) ? $attr['show_pinterest_link'] : '';
 
 ?>
-<ul id="apsp-pinterest-latest-pins" <?php if($caption_enabled == '1'){ ?> class='apsp-caption-enabled' <?php }else{ ?> class='apsp-caption-disabled clearfix' <?php } ?>>			
-<?php
-	if(!empty( $latest_pins ) ){
-		$count=0;
+<?php if(!empty( $latest_pins ) ){ ?>
+<ul id="apsp-pinterest-latest-pins" <?php if( $caption_enabled == '1' ){ ?> class='apsp-caption-enabled' <?php }else{ ?> class='apsp-caption-disabled clearfix' <?php } ?>>
+		<?php $count=0;
 		foreach ( $latest_pins as $item ):
 			$count++;
 			$rss_pin_description = $item->get_description();
@@ -36,14 +35,11 @@ $show_pinterest_link = isset($attr['show_pinterest_link']) ? $attr['show_pintere
 				<?php  }?>
 			</div>
 		</li>
-		<?php endforeach; 
-	}else{ ?>
-		<li class="apsp-pinterest-latest-pin">
-			No feeds available
-		</li>
-
-	<?php } ?>
+		<?php endforeach; ?>
 </ul>
 <?php if($show_pinterest_link =='yes'){ ?>
-<div class='apsp-pinterest-link'><a href='<?php echo $pinterest_url; ?>' target='_blank'><?php _e( 'View on Pinterest', APSP_TEXT_DOMAIN ); ?> </a></div>
+<div class='apsp-pinterest-link'><a href='<?php echo $pinterest_url; ?>' target='_blank'><?php _e( 'View on Pinterest', APSP_TEXT_DOMAIN ); ?></a></div>
 <?php } ?>
+<?php }else{ ?>
+			<span class='apsp-no-feeds'>No feeds available.</span>
+	<?php } ?>

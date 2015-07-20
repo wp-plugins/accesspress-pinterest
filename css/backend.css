@@ -52,7 +52,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 25px;
-	padding: 0 15px;
+	padding: 0 5px;
 	text-decoration: none;
 	position: relative;
 	-webkit-transition: background 0.5s ease;
@@ -60,24 +60,6 @@
 	transition: background 0.5s ease;
 }
 
-/*.apsp-setting-tabs li a:after{
-	-webkit-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
-.apsp-setting-tabs li a:hover:after,
-.apsp-setting-tabs li a.apsp-active-tab:after{
-	border-bottom: 10px solid transparent;
-	border-right: 10px solid #F1F1F1;
-	border-top: 10px solid transparent;
-	content: "";
-	margin-top: -10px;
-	position: absolute;
-	right: 0;
-	top: 50%;
-}
-*/
 .apsp-setting-tabs li a:focus{
 	border:none;
 	box-shadow: none;
@@ -326,10 +308,6 @@
   text-align: center;
   width: 16.66%;
 }
-
-/*.about-social > li span{
-    background: url("../../images/counter/social-icon.png") no-repeat scroll 0 0;
-}*/
 
 .about-social .fa {
   color: #ffffff;
