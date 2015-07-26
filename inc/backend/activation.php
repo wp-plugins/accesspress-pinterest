@@ -7,5 +7,7 @@ $apsp_settings['size']='small';
 $apsp_settings['shape']='rectangular';
 $apsp_settings['color']='gray';
 $apsp_settings['language']='eng';
+
+//update of a option table
 update_option( APSP_SETTINGS, $apsp_settings);
 ?>

@@ -442,7 +442,7 @@ class APSP_Board_Widget_Free extends WP_Widget {
                 <option value="square"          <?php selected( $custom_sizes, 'square' ); ?>><?php _e('Square', APSP_WIDGET_CONSTANT ); ?></option>
                 <option value="sidebar"         <?php selected( $custom_sizes, 'sidebar' ); ?>><?php _e('Sidebar', APSP_WIDGET_CONSTANT ); ?></option>
                 <option value="header"          <?php selected( $custom_sizes, 'header' ); ?>><?php _e('Header', APSP_WIDGET_CONSTANT ); ?></option>
-                <option value="custom"   <?php selected( $custom_sizes, 'custom' ); ?>><?php _e('Custom', APSP_WIDGET_CONSTANT ); ?></option>
+                <option value="custom"          <?php selected( $custom_sizes, 'custom' ); ?>><?php _e('Custom', APSP_WIDGET_CONSTANT ); ?></option>
             </select>
         </p>
         

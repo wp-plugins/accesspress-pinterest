@@ -34,7 +34,5 @@ switch ($custom_size) {
 					$board_width 	= isset( $board_attr['board_width'] ) 	? $board_attr['board_width'] : '400' ;
                     break;
 }
-
 ?>
-
 <a data-pin-do="embedBoard" href="<?php echo $board_url; ?>" data-pin-scale-width="<?php echo $image_width; ?>" data-pin-scale-height="<?php echo $board_height; ?>" data-pin-board-width="<?php echo $board_width; ?>"></a>

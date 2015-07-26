@@ -1,4 +1,5 @@
 jQuery(document).ready(function($){
+
 	$( '.apsp-tabs-trigger' ).click(function(){
         $( '.apsp-tabs-trigger' ).removeClass( 'apsp-active-tab' );
         $(this).addClass( 'apsp-active-tab' );
@@ -33,8 +34,5 @@ jQuery(document).ready(function($){
 		 	$('.apsp-rectangular-options').fadeOut();
 		 }
 	});
-
-
-
 
 });

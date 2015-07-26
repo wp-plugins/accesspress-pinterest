@@ -99,8 +99,8 @@
 	<div class="apsp-select-wrapper">
 	<label for='apsp-pinterest-rectangle-lang'><?php _e('Language:', APSP_TEXT_DOMAIN ); ?></label>
 	<select name='apsp-pinterest-rectangle-lang' id='apsp-pinterest-rectangle-lang'>
-		<option value='english' <?php selected( $options['language'], 'english' ); ?> ><?php _e('English', APSP_TEXT_DOMAIN ); ?></option>
-		<option value='ja' <?php selected( $options['language'], 'ja' ); ?> ><?php _e('Japanese', APSP_TEXT_DOMAIN ); ?></option>
+		<option value='english' <?php selected( $options['language'], 'english' ); ?> ><?php _e( 'English', APSP_TEXT_DOMAIN ); ?></option>
+		<option value='ja' <?php selected( $options['language'], 'ja' ); ?> ><?php _e( 'Japanese', APSP_TEXT_DOMAIN ); ?></option>
 	</select>
 	</div>
 	</div>
