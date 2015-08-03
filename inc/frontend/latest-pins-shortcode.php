@@ -5,11 +5,12 @@ $feed_url = isset( $attr['feed_url'] ) ? $attr['feed_url'] : 'https://www.pinter
 $specific_board = isset( $attr['specific_board'] ) ? $attr['specific_board'] : '';
 if(	isset($specific_board) && $specific_board !=''	){
 	$pinterest_url=$feed_url.'/'.$specific_board;
-	$feed_url =$feed_url.'/'.$specific_board.'/rss';
+	$feed_url =$feed_url.'/'.$specific_board.'.rss';
 }else{
 	$pinterest_url=$feed_url;
 	$feed_url = $feed_url.'/feed.rss';
 }
+
 $number_of_pins_to_show = isset($attr['feed_count']) ? $attr['feed_count'] : '4';
 $caption_enabled= isset( $attr['caption'] ) ? $attr['caption'] : '0';
 
