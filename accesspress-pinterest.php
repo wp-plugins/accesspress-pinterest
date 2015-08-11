@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( "No script kiddies please!" );
 Plugin name: AccessPress Pinterest
 Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
 Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-Version: 1.1.7
+Version: 1.1.8
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com
 Text Domain:apsp-pinterest
@@ -14,7 +14,7 @@ License: GPLv2 or later
 
 //Decleration of the necessary constants for plugin
 if(!defined ( 'APSP_VERSION' ) ){
-	define ( 'APSP_VERSION', '1.1.7' );
+	define ( 'APSP_VERSION', '1.1.8' );
 }
 
 if( !defined( 'APSP_IMAGE_DIR' ) ){
@@ -67,6 +67,7 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 			add_shortcode( 'apsp-latest-pins', array($this, 'apsp_latest_pins_widget_shortcode') );
 			add_action( 'admin_post_apsp_save_options', array($this, 'apsp_save_options') ); //save the options in the wordpress options table.
 			add_action( 'admin_post_apsp_restore_default_settings', array($this, 'apsp_restore_default_settings') ); //restores default settings.
+			add_filter( 'clean_url', array($this, 'add_async')); //filter the scripts to add async attributes.
 		}
 
 		//starts the session with the call of init hook
@@ -101,8 +102,8 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 		function register_frontend_assets(){
             wp_enqueue_style( 'apsp-font-opensans', 'http://fonts.googleapis.com/css?family=Open+Sans', array(), false );
             wp_enqueue_style( 'apsp-frontend-css', APSP_CSS_DIR . '/frontend.css', '', APSP_VERSION );
-			wp_enqueue_script( 'masionary-js', APSP_JS_DIR . '/jquery-masionary.js', array('jquery'), APSP_VERSION, true );
-			wp_enqueue_script( 'frontend-js', APSP_JS_DIR . '/frontend.js', array( 'jquery','masionary-js' ), APSP_VERSION, true );
+			wp_enqueue_script( 'masionary-js', APSP_JS_DIR . '/jquery-masionary.js#async', array('jquery'), APSP_VERSION, true );
+			wp_enqueue_script( 'frontend-js', APSP_JS_DIR . '/frontend.js#async', array( 'jquery','masionary-js' ), APSP_VERSION, true );
 
 			if($this->apsp_settings['js_enabled']=='on'){
 				if($this->apsp_settings['pinit_js_disable'] == 'off'){
@@ -285,6 +286,19 @@ if ( !class_exists( 'APSP_Class_free' ) ){
 	                die( 'No script kiddies please!' );
 	            }
 		}
+
+		/*
+        * Function to add async loading of scripts
+        */
+        function add_async ( $url ) {
+            if( strpos( $url, "#async" ) === false )
+                return $url;
+            else if(is_admin())
+                return str_replace("#async", "", $url);
+            else
+                return str_replace( "#async", "", "$url' async='async" );
+        }
+
 	}
 
 	$apsp_object = new APSP_Class_free();
