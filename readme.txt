@@ -4,7 +4,7 @@ Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social s
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,7 +65,7 @@ For premium upgrade please go [here](https://accesspressthemes.com/wordpress-plu
 * <strong>Support Forum Link</strong>: http://accesspressthemes.com/support/
 * <strong>Website Link</strong>: http://accesspressthemes.com/
 * <strong>Youtube channel link</strong>: https://www.youtube.com/watch?v=TjZNcVG3fDE
-* <strong>Facebook link</strong>: https://www.facebook.com/AccessPressThemes 
+* <strong>Facebook link</strong>: https://www.facebook.com/AccessPressThemes
 
 For a easy installation guide checkout the Installation tab above.
 
@@ -75,7 +75,7 @@ For complete information and documentation regarding plugin, please visit below 
 
 [Docs](https://accesspressthemes.com/documentation/documentation-plugin-instruction-accesspress-pinterest/ )
 
-[Demo](http://accesspressthemes.com/demo/wordpress-plugins/accesspress-pinterest/)
+[Demo](http://demo.accesspressthemes.com/wordpress-plugins/accesspress-pinterest/)
 
 == Installation ==
 1. Unzip accesspress-pinterest.zip
@@ -103,6 +103,9 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 1.1.9 =
+* Demo link url change.
+
 = 1.1.8 =
 * Done the asynchronous loading of the scripts from the plugin.
 
