@@ -4,7 +4,7 @@ Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social s
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.1.9
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,6 +103,14 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 2.0.1 =
+* Code formatting and optimization for plugin.
+* Code fixing for the follow and board widget links.
+
+= 2.0.0 =
+* Text corrections in the how to use section.
+* Code formatting for the methods used in the pinterest class.
+
 = 1.1.9 =
 * Demo link url change.
 
