@@ -116,7 +116,6 @@
 
                     <?php wp_nonce_field('apsp_nonce_save_settings', 'apsp_add_nonce_save_settings'); ?>
                     <input type='submit' name='apsp_save_settings' value='Save Settings' class="apsp-save-btn" />
-                    <?php //wp_nonce_field('apsp_settings_restore_nonce', 'apsp_restore_settings_action'); ?>
                     <?php $nonce = wp_create_nonce('apsp-restore-default-settings-nonce'); ?>
                     <a class="apsp-btn-wrap" href="<?php echo admin_url() . 'admin-post.php?action=apsp_restore_default_settings&_wpnonce=' . $nonce; ?>" onclick="return confirm('<?php _e('Are you sure you want to restore default settings?', APSP_TEXT_DOMAIN); ?>')"><input type="button" value="Restore Default Settings" class="apsp-reset-button"/></a>
                 </form>

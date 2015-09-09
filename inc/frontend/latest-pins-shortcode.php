@@ -30,7 +30,7 @@ $show_pinterest_link = isset($attr['show_pinterest_link']) ? $attr['show_pintere
             ?>
             <li class="apsp-pinterest-latest-pin">
                 <div class="apsp-pinterest-image">
-                    <a href="<?php echo esc_url($item->get_permalink()); ?>" target="_blank" title="<?php echo 'Posted ' . $item->get_date('j F Y | g:i a'); ?>" ><img src='<?php echo $pin_image[0]; ?>' alt="<?php echo $item->get_title(); ?>" /></a>
+                    <a href="<?php echo esc_url($item->get_permalink()); ?>" target="_blank" title="<?php echo 'Posted ' . $item->get_date('j F Y | g:i a'); ?>" ><img src='<?php echo $pin_image[0]; ?>' title='<?php echo $item->get_title(); ?>' alt="<?php echo $item->get_title(); ?>" /></a>
                     <?php if ($caption_enabled == '1') { ?>
                         <span class="apsp-pinterest-text"><?php echo strip_tags($pin_caption); ?></span>
                     <?php } ?>

@@ -2,7 +2,7 @@
     <div class="about-desc-wrap clearfix">
         <div class="apsp-title"> About AccessPress Pinterest</div>
         <div class="about-content">
-            <p><strong>AccessPress Pinterest</strong> is a feature rich FREE Pinterest plugin for WordPress. In just 1 minute setup you can use:</p>       
+            <p><strong>AccessPress Pinterest</strong> is a feature rich FREE Pinterest plugin for WordPress. In just 1 minute setup you can use:</p>
             <ul>
                 <li>Pin it button on image.</li>
                 <li>Put follow Pinterest button on website.</li>
