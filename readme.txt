@@ -1,10 +1,10 @@
-﻿=== AccessPress Pinterest ===
+=== AccessPress Pinterest ===
 Contributors: Access Keys
 Tags: pinterest, pinterest widget, widget, board, profile, pin it, pin, social share pinterest, social share, social media, social network, follow, pinterest pin, shortcode
 Donate link: http://accesspressthemes.com/donation/
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,7 +94,6 @@ No, because we have used the native pinterest widget builder functions in the pl
 = Where can I find the documentation for the plugin? =
 Once you install the plugin, you can check some general documentation about how to use the plugin in the "How to use" panel of the plugin's settings page. Complete documentation can be found  [here](https://accesspressthemes.com/documentation/documentation-plugin-instruction-accesspress-pinterest/).
 
-
 == Screenshots ==
 1. Backend Pinterest Settings.
 2. Frontend Dispaly of the pinterest image hover buttons.
@@ -104,9 +103,12 @@ Once you install the plugin, you can check some general documentation about how 
 6. Frontend display of Widgets.
 
 == Changelog ==
+= 2.0.3 =
+* Done the demo link url modification for the plugin.
+* Code formatting to optimize the plugin.
+
 = 2.0.2 =
 * Added the title attributes to images for latest pins widget.
-
 
 = 2.0.1 =
 * Code formatting and optimization for plugin.

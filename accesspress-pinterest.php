@@ -5,7 +5,7 @@ defined('ABSPATH') or die("No script kiddies please!");
   Plugin name: AccessPress Pinterest
   Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
   Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-  Version: 2.0.2
+  Version: 2.0.3
   Author: AccessPress Themes
   Author URI: http://accesspressthemes.com
   Text Domain:apsp-pinterest
@@ -15,7 +15,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 
 //Decleration of the necessary constants for plugin
 if (!defined('APSP_VERSION')) {
-    define('APSP_VERSION', '2.0.2');
+    define('APSP_VERSION', '2.0.3');
 }
 
 if (!defined('APSP_IMAGE_DIR')) {
@@ -229,11 +229,11 @@ if (!class_exists('APSP_Class_free')) {
             }
 
             $return_string = "' async";
-            $hover_op = $this->apsp_settings['js_enabled'];
-            $color_op = $this->apsp_settings['color'];
-            $size_op = $this->apsp_settings['size'];
-            $lang_op = $this->apsp_settings['language'];
-            $shape_op = $this->apsp_settings['shape'];
+            $hover_op   = $this->apsp_settings['js_enabled'];
+            $color_op   = $this->apsp_settings['color'];
+            $size_op    = $this->apsp_settings['size'];
+            $lang_op    = $this->apsp_settings['language'];
+            $shape_op   = $this->apsp_settings['shape'];
 
             // if image hover is enabled, append the data-pin-hover attribute
             if (isset($hover_op) && $hover_op == "on") {
