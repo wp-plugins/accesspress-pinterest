@@ -1,0 +1,273 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AccessPress Pinterest\n"
+"POT-Creation-Date: 2015-07-26 15:04+0545\n"
+"PO-Revision-Date: 2015-07-26 15:05+0545\n"
+"Last-Translator: \n"
+"Language-Team: Accesspress themes <support@accesspressthemes.com>\n"
+"Language: english\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../accesspress-pinterest.php:281
+msgid "Settings restored Successfully."
+msgstr ""
+
+#: ../inc/backend/main-page.php:30
+msgid "AccessPress Pinterest"
+msgstr ""
+
+#: ../inc/backend/main-page.php:52
+msgid "Pinterest pin it settings"
+msgstr ""
+
+#: ../inc/backend/main-page.php:53
+msgid "How To Use"
+msgstr ""
+
+#: ../inc/backend/main-page.php:54
+msgid "About"
+msgstr ""
+
+#: ../inc/backend/main-page.php:61
+msgid "Pinterest pinit.js Loading settings"
+msgstr ""
+
+#: ../inc/backend/main-page.php:63
+msgid "Disable pinit.js?"
+msgstr ""
+
+#: ../inc/backend/main-page.php:65
+msgid "Disable output of pinit.js, the JavaScript file from this plugin."
+msgstr ""
+
+#: ../inc/backend/main-page.php:66
+msgid ""
+"Check this option if you have pinit.js already called in another plugin or "
+"theme. Multiple insertion of pinit.js on a page can cause conflicts."
+msgstr ""
+
+#: ../inc/backend/main-page.php:69
+msgid "Pinterest Pin it Hover Settings"
+msgstr ""
+
+#: ../inc/backend/main-page.php:71
+msgid "Enable the Pin It hover button over images."
+msgstr ""
+
+#: ../inc/backend/main-page.php:72
+msgid "Button apperance settings"
+msgstr ""
+
+#: ../inc/backend/main-page.php:74
+msgid "size:"
+msgstr ""
+
+#: ../inc/backend/main-page.php:76
+msgid "Small"
+msgstr ""
+
+#: ../inc/backend/main-page.php:77
+msgid "Large"
+msgstr ""
+
+#: ../inc/backend/main-page.php:82
+msgid "shape:"
+msgstr ""
+
+#: ../inc/backend/main-page.php:84
+msgid "Rectangular"
+msgstr ""
+
+#: ../inc/backend/main-page.php:85
+msgid "Circular"
+msgstr ""
+
+#: ../inc/backend/main-page.php:89
+msgid "Options for rectangular shape button"
+msgstr ""
+
+#: ../inc/backend/main-page.php:91
+msgid "Color: "
+msgstr ""
+
+#: ../inc/backend/main-page.php:93
+msgid "Red"
+msgstr ""
+
+#: ../inc/backend/main-page.php:94
+msgid "Gray"
+msgstr ""
+
+#: ../inc/backend/main-page.php:95
+msgid "White"
+msgstr ""
+
+#: ../inc/backend/main-page.php:100
+msgid "Language:"
+msgstr ""
+
+#: ../inc/backend/main-page.php:102
+msgid "English"
+msgstr ""
+
+#: ../inc/backend/main-page.php:103
+msgid "Japanese"
+msgstr ""
+
+#: ../inc/backend/main-page.php:123
+msgid "Are you sure you want to restore default settings?"
+msgstr ""
+
+#: ../inc/backend/save-settings.php:18
+msgid "Settings Saved Successfully."
+msgstr ""
+
+#: ../inc/backend/widget.php:21 ../inc/backend/widget.php:22
+msgid "AccessPress Pinterest follow widget"
+msgstr ""
+
+#: ../inc/backend/widget.php:55 ../inc/backend/widget.php:144
+#: ../inc/backend/widget.php:258 ../inc/backend/widget.php:430
+#: ../inc/backend/widget.php:602
+msgid "Title: "
+msgstr ""
+
+#: ../inc/backend/widget.php:59
+msgid "Pinterest Name: "
+msgstr ""
+
+#: ../inc/backend/widget.php:63
+msgid "Button Label: "
+msgstr ""
+
+#: ../inc/backend/widget.php:118 ../inc/backend/widget.php:119
+msgid "AccessPress Single Pin Image widget"
+msgstr ""
+
+#: ../inc/backend/widget.php:148
+msgid "Image URL: "
+msgstr ""
+
+#: ../inc/backend/widget.php:169
+msgid ""
+"Please enter the pinterest pin image url in widget to make the pin widget "
+"appear here."
+msgstr ""
+
+#: ../inc/backend/widget.php:206 ../inc/backend/widget.php:207
+msgid "AccessPress Pinterest Profile widget"
+msgstr ""
+
+#: ../inc/backend/widget.php:262
+msgid "Profile Name: "
+msgstr ""
+
+#: ../inc/backend/widget.php:267 ../inc/backend/widget.php:440
+msgid "Widget Size: "
+msgstr ""
+
+#: ../inc/backend/widget.php:269 ../inc/backend/widget.php:442
+msgid "Square"
+msgstr ""
+
+#: ../inc/backend/widget.php:270 ../inc/backend/widget.php:443
+msgid "Sidebar"
+msgstr ""
+
+#: ../inc/backend/widget.php:271 ../inc/backend/widget.php:444
+msgid "Header"
+msgstr ""
+
+#: ../inc/backend/widget.php:272 ../inc/backend/widget.php:445
+msgid "Custom"
+msgstr ""
+
+#: ../inc/backend/widget.php:277 ../inc/backend/widget.php:450
+msgid "Please use these values only for custom size widget selection."
+msgstr ""
+
+#: ../inc/backend/widget.php:279 ../inc/backend/widget.php:453
+msgid "Image Width: "
+msgstr ""
+
+#: ../inc/backend/widget.php:280 ../inc/backend/widget.php:285
+#: ../inc/backend/widget.php:290 ../inc/backend/widget.php:454
+#: ../inc/backend/widget.php:459 ../inc/backend/widget.php:464
+msgid "Please enter numbers only."
+msgstr ""
+
+#: ../inc/backend/widget.php:284 ../inc/backend/widget.php:458
+msgid "Board Height: "
+msgstr ""
+
+#: ../inc/backend/widget.php:289 ../inc/backend/widget.php:463
+msgid "Board Width: "
+msgstr ""
+
+#: ../inc/backend/widget.php:315
+msgid ""
+"Please enter the pinterest profile name in widget to make the profile widget "
+"appear here"
+msgstr ""
+
+#: ../inc/backend/widget.php:379 ../inc/backend/widget.php:380
+msgid "AccessPress Pinterest Board widget"
+msgstr ""
+
+#: ../inc/backend/widget.php:435
+msgid "Board URL: "
+msgstr ""
+
+#: ../inc/backend/widget.php:486
+msgid ""
+"Please enter the pinterest board url in widget to make the board widget "
+"appear here"
+msgstr ""
+
+#: ../inc/backend/widget.php:550 ../inc/backend/widget.php:551
+msgid "AccessPress Latest Pins Widget"
+msgstr ""
+
+#: ../inc/backend/widget.php:606
+msgid "Profile URL: "
+msgstr ""
+
+#: ../inc/backend/widget.php:611
+msgid "Specific Board(optional): "
+msgstr ""
+
+#: ../inc/backend/widget.php:616
+msgid "Number of Items: "
+msgstr ""
+
+#: ../inc/backend/widget.php:625
+msgid "Image captions?: "
+msgstr ""
+
+#: ../inc/backend/widget.php:627 ../inc/backend/widget.php:635
+msgid "Yes"
+msgstr ""
+
+#: ../inc/backend/widget.php:628 ../inc/backend/widget.php:636
+msgid "No"
+msgstr ""
+
+#: ../inc/backend/widget.php:633
+msgid "Show Pinterest Link?: "
+msgstr ""
+
+#: ../inc/frontend/latest-pins-shortcode.php:41
+msgid "View on Pinterest"
+msgstr ""
+
+#: ../inc/frontend/latest-pins-shortcode.php:44
+msgid "No feeds available."
+msgstr ""
