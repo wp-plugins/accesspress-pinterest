@@ -164,7 +164,7 @@ class APSP_Single_Pin_Widget_Free extends WP_Widget {
         }
 
         if (empty($instance['pin_image_url'])) {
-            _e("Please enter the pinterest pin image url in widget to make the pin widget appear here.", APSP_WIDGET_CONSTANT);
+            _e("Please enter the pinterest pin image url here.", APSP_WIDGET_CONSTANT);
         } else {
             echo "<div class='apsp-widget-free'>";
             echo do_shortcode("[apsp-pin-image image_url='{$instance['pin_image_url']}']");
@@ -271,7 +271,7 @@ class APSP_Profile_Widget_Free extends WP_Widget {
         </p>
 
         <div class='apsp-profile-custom-size-values' <?php if ($custom_sizes == 'custom') { ?> style="display:block;" <?php } else { ?>style='display:none;' <?php } ?>>
-            <p><?php _e('Please use these values only for custom size widget selection.', APSP_WIDGET_CONSTANT); ?> </p>
+            <p><?php _e('Please use these values only if you choose widget size - custom.', APSP_WIDGET_CONSTANT); ?> </p>
             <p>
                 <label for="<?php echo $this->get_field_id('image_width'); ?>"><?php _e('Image Width: ', APSP_WIDGET_CONSTANT); ?></label> 
                 <input class="widefat" id="<?php echo $this->get_field_id('image_width'); ?>" name="<?php echo $this->get_field_name('image_width'); ?>" type="text" value="<?php echo esc_attr($image_width); ?>" placeholder="<?php _e('Please enter numbers only.', APSP_WIDGET_CONSTANT); ?>">
