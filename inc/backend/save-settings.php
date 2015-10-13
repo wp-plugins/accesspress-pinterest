@@ -1,4 +1,3 @@
-<?php defined('ABSPATH') or die("No script kiddies please!"); ?>
 <?php
 
 defined('ABSPATH') or die('No script kiddies please!');
@@ -18,7 +17,7 @@ if ($_POST['action'] == 'apsp_save_options') {
     $apsp_settings['language']          = $button_lang;
 
     update_option(APSP_SETTINGS, $apsp_settings);
-    $_SESSION['apsp_message'] = __( 'Settings Saved Successfully.', APSP_TEXT_DOMAIN );
-    wp_redirect( admin_url() . 'admin.php?page=apsp-pinterest' );
+    $_SESSION['apsp_message'] = __( 'Settings Saved Successfully.', 'accesspress-pinterest' );
+    wp_redirect( admin_url() . 'admin.php?page=accesspress-pinterest' );
     exit;
 }

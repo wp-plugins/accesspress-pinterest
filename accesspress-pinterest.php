@@ -4,17 +4,17 @@ defined('ABSPATH') or die("No script kiddies please!");
   Plugin name: AccessPress Pinterest
   Plugin URI: https://accesspressthemes.com/wordpress-plugins/accesspress-pinterest/
   Description: A plugin to add various pinterest widgets and pins to a site with dynamic configuration options.
-  Version: 2.0.4
+  Version: 2.0.6
   Author: AccessPress Themes
   Author URI: http://accesspressthemes.com
-  Text Domain:apsp-pinterest
+  Text Domain:accesspress-pinterest
   Domain Path: /languages/
   License: GPLv2 or later
  */
 
 //Decleration of the necessary constants for plugin
 if (!defined('APSP_VERSION')) {
-    define('APSP_VERSION', '2.0.4');
+    define('APSP_VERSION', '2.0.6');
 }
 
 if (!defined('APSP_IMAGE_DIR')) {
@@ -34,7 +34,7 @@ if (!defined('APSP_LANG_DIR')) {
 }
 
 if (!defined('APSP_TEXT_DOMAIN')) {
-    define('APSP_TEXT_DOMAIN', 'apsp-pinterest');
+    define('APSP_TEXT_DOMAIN', 'accesspress-pinterest');
 }
 
 if (!defined('APSP_SETTINGS')) {
@@ -89,12 +89,12 @@ if (!class_exists('APSP_Class_free')) {
 
         //loads the text domain for translation
         function plugin_text_domain() {
-            load_plugin_textdomain(APSP_TEXT_DOMAIN, false, APSP_LANG_DIR);
+            load_plugin_textdomain( 'accesspress-pinterest', false, APSP_LANG_DIR );
         }
 
         //registration of the backend assets
         function register_admin_assets() {
-            if (isset($_GET['page']) && $_GET['page'] == 'apsp-pinterest') {
+            if (isset($_GET['page']) && $_GET['page'] == 'accesspress-pinterest') {
                 //registration of css in the admin panel
                 wp_enqueue_style('apsp-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '', APSP_VERSION);
                 wp_enqueue_style('apsp-frontend-css', APSP_CSS_DIR . '/backend.css', '', APSP_VERSION);
@@ -125,7 +125,7 @@ if (!class_exists('APSP_Class_free')) {
 
         //register the plugin menu for backend.
         function add_apsp_menu() {
-            add_menu_page('AccessPress Pinterest', 'AccessPress Pinterest', 'manage_options', APSP_TEXT_DOMAIN, array($this, 'main_page'), APSP_IMAGE_DIR . '/apsp-icon.png');
+            add_menu_page('AccessPress Pinterest', 'AccessPress Pinterest', 'manage_options', 'accesspress-pinterest', array($this, 'main_page'), APSP_IMAGE_DIR . '/apsp-icon.png');
         }
 
         //plugins backend admin page
@@ -284,8 +284,8 @@ if (!class_exists('APSP_Class_free')) {
             if (!empty($_GET) && wp_verify_nonce($nonce, 'apsp-restore-default-settings-nonce')) {
                 //restore the default plugin activation settings from the activation page.
                 include( 'inc/backend/activation.php' );
-                $_SESSION['apsp_message'] = __('Settings restored Successfully.', APSP_TEXT_DOMAIN);
-                wp_redirect(admin_url() . 'admin.php?page=' . APSP_TEXT_DOMAIN);
+                $_SESSION['apsp_message'] = __('Settings restored Successfully.', 'accesspress-pinterest');
+                wp_redirect(admin_url() . 'admin.php?page=' . 'accesspress-pinterest');
                 exit;
             } else {
                 die('No script kiddies please!');

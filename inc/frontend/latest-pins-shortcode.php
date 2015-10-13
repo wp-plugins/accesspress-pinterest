@@ -39,8 +39,8 @@ $show_pinterest_link = isset($attr['show_pinterest_link']) ? $attr['show_pintere
         <?php endforeach; ?>
     </ul>
     <?php if ($show_pinterest_link == 'yes') { ?>
-        <div class='apsp-pinterest-link'><a href='<?php echo $pinterest_url; ?>' target='_blank'><?php _e('View on Pinterest', APSP_TEXT_DOMAIN); ?></a></div>
+        <div class='apsp-pinterest-link'><a href='<?php echo $pinterest_url; ?>' target='_blank'><?php _e('View on Pinterest', 'accesspress-pinterest' ); ?></a></div>
     <?php } ?>
 <?php } else { ?>
-    <span class='apsp-no-feeds'><?php _e('No feeds available.', APSP_TEXT_DOMAIN); ?></span>
+    <span class='apsp-no-feeds'><?php _e('No feeds available.', 'accesspress-pinterest' ); ?></span>
 <?php }
