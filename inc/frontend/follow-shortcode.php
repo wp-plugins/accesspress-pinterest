@@ -1,5 +1,4 @@
-<?php defined('ABSPATH') or die("No script kiddies please!"); ?>
-<?php
+<?php defined('ABSPATH') or die("No script kiddies please!");
 if (isset($attr['name']) && $attr['name'] != '') {
     $name = $attr['name'];
 } else {
